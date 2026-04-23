@@ -1,0 +1,117 @@
+"use client";
+
+import { useMemo } from "react";
+import { useTranslations } from "next-intl";
+import { Ban, Edit, Eye } from 'lucide-react';
+import { DataTable } from "@/components/data-table/data-table";
+import { getBeneficiaryColumns } from "../../lib/get-beneficiary-columns";
+import { BeneficiaryFamilyRow } from "./beneficiary-family-row";
+import { useBeneficiariesTable } from "../../hooks/use-beneficiaries-table";
+
+export function BeneficiariesFamilyTable() {
+  const t = useTranslations("table");
+  const { query,
+    setQuery,
+    data,
+    loading,
+    nationalityOptions,
+    planOptions,
+    coverageOptions,
+    paymentOptions, } =
+    useBeneficiariesTable();
+
+  const columns = useMemo(() => getBeneficiaryColumns(), []);
+
+  return (
+    <DataTable
+      data={data?.data ?? []}
+      columns={columns}
+      loading={loading}
+      search={query.search}
+      onSearchChange={(value) =>
+        setQuery((prev) => ({
+          ...prev,
+          pageIndex: 0,
+          search: value,
+        }))
+      }
+      filters={[
+        {
+          key: 'nationality',
+          label: 'All nationalities',
+          value: query.nationality,
+          options: nationalityOptions,
+          onChange: (value) =>
+            setQuery((prev) => ({ ...prev, pageIndex: 0, nationality: value })),
+        },
+        {
+          key: 'plan',
+          label: 'All plans',
+          value: query.plan,
+          options: planOptions,
+          onChange: (value) =>
+            setQuery((prev) => ({ ...prev, pageIndex: 0, plan: value })),
+        },
+        {
+          key: 'coverageStatus',
+          label: 'All coverage',
+          value: query.coverageStatus,
+          options: coverageOptions,
+          onChange: (value) =>
+            setQuery((prev) => ({ ...prev, pageIndex: 0, coverageStatus: value })),
+        },
+        {
+          key: 'paymentStatus',
+          label: 'All payments',
+          value: query.paymentStatus,
+          options: paymentOptions,
+          onChange: (value) =>
+            setQuery((prev) => ({ ...prev, pageIndex: 0, paymentStatus: value })),
+        },
+      ]}
+      pagination={{
+        pageIndex: query.pageIndex,
+        pageSize: query.pageSize,
+      }}
+      pageCount={data?.totalPages ?? 1}
+      onPaginationChange={(updaterOrValue) => {
+        setQuery((prev) => {
+          const nextPagination =
+            typeof updaterOrValue === "function"
+              ? updaterOrValue({
+                pageIndex: prev.pageIndex,
+                pageSize: prev.pageSize,
+              })
+              : updaterOrValue;
+
+          return {
+            ...prev,
+            pageIndex: nextPagination.pageIndex,
+            pageSize: nextPagination.pageSize,
+          };
+        });
+      }}
+      enableExpandable
+      renderExpandedRow={(row) => (
+        <BeneficiaryFamilyRow beneficiary={row} />
+      )}
+      actions={[
+        {
+          label: t('view'),
+          icon: Eye,
+          onClick: (row) => alert(`View beneficiary ${row.fullName}`),
+        },
+        {
+          label: 'Edit',
+          icon: Edit,
+          onClick: (row) => alert(`Edit beneficiary ${row.fullName}`),
+        },
+        {
+          label: 'Suspend',
+          icon: Ban,
+          onClick: (row) => alert(`Suspend beneficiary ${row.fullName}`),
+        },
+      ]}
+    />
+  );
+}

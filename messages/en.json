@@ -1,0 +1,56 @@
+{
+  "app": {
+    "title": "Reusable Generic Table Demo"
+  },
+  "nav": {
+    "home": "Home",
+    "selection": "Selection Table",
+    "expandable": "Expandable Table",
+    "beneficiariesFamily": "Beneficiaries Family",
+    "beneficiaries": "Beneficiaries"
+  },
+  "home": {
+    "title": "Reusable Generic Table Demo",
+    "description": "Two demos built on one shared generic table component.",
+    "selectionTitle": "Table with Row Selection",
+    "selectionDescription": "Search, filters, pagination, row actions, and row selection.",
+    "expandableTitle": "Table with Expandable Rows",
+    "expandableDescription": "Search, filters, pagination, row actions, and expandable child content.",
+    "open": "Open demo"
+  },
+
+  "beneficiariesPage": {
+    "title": "Beneficiaries Table",
+    "description": "Select beneficiaries using the same reusable generic table."
+  },
+
+  "beneficiariesFamilyPage": {
+    "title": "Beneficiaries And Family Table",
+    "description": "Insurance beneficiaries with payment status and expandable family members."
+  },
+  "table": {
+    "searchPlaceholder": "Search by name or email...",
+    "allRoles": "All roles",
+    "allStatuses": "All statuses",
+    "previous": "Previous",
+    "next": "Next",
+    "page": "Page",
+    "of": "of",
+    "rowsSelected": "rows selected",
+    "expand": "Expand",
+    "collapse": "Collapse",
+    "actions": "Actions",
+    "delete": "Delete",
+    "empty": "No matching users found.",
+    "loading": "Loading users...",
+    "memberships": "Memberships",
+    "plan": "Plan",
+    "projects": "Projects",
+    "usage": "Usage",
+    "selectionEnabled": "Selection enabled",
+    "expandableEnabled": "Expandable rows enabled",
+    "view": "View",
+    "edit": "Edit",
+    "suspend": "Suspend"
+  }
+}

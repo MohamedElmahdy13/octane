@@ -1,21 +1,37 @@
-# Next.js template
+# Octane
 
-This is a Next.js template with shadcn/ui.
+This project now includes the requested task structure with:
 
-## Adding components
+- Next.js App Router
+- TypeScript
+- Tailwind CSS
+- shadcn-style local UI components
+- TanStack Table
+- next-intl with `proxy.ts`
+- locale routes: `/en` and `/ar`
+- English / Arabic support
+- RTL / LTR handling
+- fetch-based local mock API
+- page 1: row selection
+- page 2: expandable rows
 
-To add components to your app, run the following command:
-
+## Install
 ```bash
-npx shadcn@latest add button
+npm install
+npm run dev
 ```
 
-This will place the ui components in the `components` directory.
+## New files added
+- `proxy.ts`
+- `i18n/`
+- `messages/`
+- `mock/users.json`
+- `app/[locale]/`
+- `app/api/users/route.ts`
+- `components/layout/`
+- `components/data-table/`
+- `features/users/`
 
-## Using components
-
-To use the components in your app, import them as follows:
-
-```tsx
-import { Button } from "@/components/ui/button";
-```
+## Packages added
+- `next-intl`
+- `@tanstack/react-table`
