@@ -1,0 +1,2034 @@
+{
+  "beneficiaries": [
+    {
+      "id": "BEN-001",
+      "fullName": "Ahmed Wael",
+      "email": "ahmed.wael.1@example.com",
+      "nationality": "Lebanese",
+      "policyNumber": "POL-2026-1001",
+      "company": "Nile Tech",
+      "plan": "Platinum",
+      "coverageStatus": "Expired",
+      "startDate": "2025-02-17T13:48:59.020Z",
+      "endDate": "2026-01-02T08:54:56.621Z",
+      "payment": {
+        "monthlyPremium": 2800,
+        "outstandingAmount": 0,
+        "lastPaymentDate": "2026-01-01T18:04:49.147Z",
+        "paymentStatus": "Paid"
+      },
+      "familyMembers": []
+    },
+    {
+      "id": "BEN-002",
+      "fullName": "Tamer Adel",
+      "email": "tamer.adel.2@example.com",
+      "nationality": "Egyptian",
+      "policyNumber": "POL-2026-1002",
+      "company": "Delta Finance",
+      "plan": "Platinum",
+      "coverageStatus": "Expired",
+      "startDate": "2025-04-10T21:42:37.828Z",
+      "endDate": "2026-03-30T18:33:06.932Z",
+      "payment": {
+        "monthlyPremium": 2800,
+        "outstandingAmount": 5600,
+        "lastPaymentDate": "2026-01-22T07:19:18.081Z",
+        "paymentStatus": "Pending"
+      },
+      "familyMembers": [
+        {
+          "id": "FM-2-1",
+          "fullName": "Mariam Khaled",
+          "relationship": "Spouse",
+          "gender": "Male",
+          "dateOfBirth": "1987-05-23T03:27:28.652Z",
+          "isCovered": true
+        }
+      ]
+    },
+    {
+      "id": "BEN-003",
+      "fullName": "Salma Adel",
+      "email": "salma.adel.3@example.com",
+      "nationality": "Lebanese",
+      "policyNumber": "POL-2026-1003",
+      "company": "MedCare Solutions",
+      "plan": "Gold",
+      "coverageStatus": "Suspended",
+      "startDate": "2025-01-24T19:35:58.485Z",
+      "endDate": "2026-03-16T22:12:35.567Z",
+      "payment": {
+        "monthlyPremium": 1800,
+        "outstandingAmount": 3600,
+        "lastPaymentDate": "2026-02-04T02:47:29.805Z",
+        "paymentStatus": "Pending"
+      },
+      "familyMembers": []
+    },
+    {
+      "id": "BEN-004",
+      "fullName": "Amr Khaled",
+      "email": "amr.khaled.4@example.com",
+      "nationality": "Egyptian",
+      "policyNumber": "POL-2026-1004",
+      "company": "MedCare Solutions",
+      "plan": "Platinum",
+      "coverageStatus": "Active",
+      "startDate": "2025-04-13T15:10:33.444Z",
+      "endDate": "2026-09-25T17:11:52.459Z",
+      "payment": {
+        "monthlyPremium": 2800,
+        "outstandingAmount": 0,
+        "lastPaymentDate": "2026-03-24T08:10:49.836Z",
+        "paymentStatus": "Paid"
+      },
+      "familyMembers": [
+        {
+          "id": "FM-4-1",
+          "fullName": "Sara Adel",
+          "relationship": "Daughter",
+          "gender": "Female",
+          "dateOfBirth": "1982-03-15T21:12:24.632Z",
+          "isCovered": true
+        }
+      ]
+    },
+    {
+      "id": "BEN-005",
+      "fullName": "Mostafa Ali",
+      "email": "mostafa.ali.5@example.com",
+      "nationality": "Saudi",
+      "policyNumber": "POL-2026-1005",
+      "company": "FinServe Egypt",
+      "plan": "Gold",
+      "coverageStatus": "Suspended",
+      "startDate": "2025-03-17T11:25:04.622Z",
+      "endDate": "2026-04-20T06:03:31.930Z",
+      "payment": {
+        "monthlyPremium": 1800,
+        "outstandingAmount": 1800,
+        "lastPaymentDate": "2026-01-23T01:13:33.747Z",
+        "paymentStatus": "Pending"
+      },
+      "familyMembers": [
+        {
+          "id": "FM-5-1",
+          "fullName": "Youssef Tarek",
+          "relationship": "Spouse",
+          "gender": "Male",
+          "dateOfBirth": "1989-01-05T12:35:59.711Z",
+          "isCovered": true
+        },
+        {
+          "id": "FM-5-2",
+          "fullName": "Laila Ali",
+          "relationship": "Spouse",
+          "gender": "Female",
+          "dateOfBirth": "1970-04-14T08:47:59.562Z",
+          "isCovered": true
+        }
+      ]
+    },
+    {
+      "id": "BEN-006",
+      "fullName": "Salma Hassan",
+      "email": "salma.hassan.6@example.com",
+      "nationality": "Lebanese",
+      "policyNumber": "POL-2026-1006",
+      "company": "AXA Group",
+      "plan": "Platinum",
+      "coverageStatus": "Suspended",
+      "startDate": "2025-03-02T01:19:14.185Z",
+      "endDate": "2026-09-21T22:44:41.862Z",
+      "payment": {
+        "monthlyPremium": 2800,
+        "outstandingAmount": 5600,
+        "lastPaymentDate": "2026-04-22T16:15:32.789Z",
+        "paymentStatus": "Pending"
+      },
+      "familyMembers": [
+        {
+          "id": "FM-6-1",
+          "fullName": "Hana Hassan",
+          "relationship": "Spouse",
+          "gender": "Female",
+          "dateOfBirth": "2019-05-01T02:35:25.731Z",
+          "isCovered": true
+        },
+        {
+          "id": "FM-6-2",
+          "fullName": "Omar Adel",
+          "relationship": "Spouse",
+          "gender": "Female",
+          "dateOfBirth": "1977-04-27T08:46:17.397Z",
+          "isCovered": true
+        }
+      ]
+    },
+    {
+      "id": "BEN-007",
+      "fullName": "Sara Fathy",
+      "email": "sara.fathy.7@example.com",
+      "nationality": "Lebanese",
+      "policyNumber": "POL-2026-1007",
+      "company": "Nile Tech",
+      "plan": "Gold",
+      "coverageStatus": "Suspended",
+      "startDate": "2025-10-20T18:53:02.481Z",
+      "endDate": "2026-05-07T22:45:10.600Z",
+      "payment": {
+        "monthlyPremium": 1800,
+        "outstandingAmount": 3600,
+        "lastPaymentDate": "2026-03-24T13:16:11.698Z",
+        "paymentStatus": "Overdue"
+      },
+      "familyMembers": [
+        {
+          "id": "FM-7-1",
+          "fullName": "Ahmed Mahmoud",
+          "relationship": "Spouse",
+          "gender": "Female",
+          "dateOfBirth": "2018-04-11T09:46:49.976Z",
+          "isCovered": false
+        },
+        {
+          "id": "FM-7-2",
+          "fullName": "Laila Wael",
+          "relationship": "Son",
+          "gender": "Female",
+          "dateOfBirth": "1978-05-24T11:46:37.041Z",
+          "isCovered": true
+        }
+      ]
+    },
+    {
+      "id": "BEN-008",
+      "fullName": "Nour Hassan",
+      "email": "nour.hassan.8@example.com",
+      "nationality": "Egyptian",
+      "policyNumber": "POL-2026-1008",
+      "company": "MedCare Solutions",
+      "plan": "Gold",
+      "coverageStatus": "Active",
+      "startDate": "2025-07-15T03:51:19.775Z",
+      "endDate": "2026-01-14T01:58:05.421Z",
+      "payment": {
+        "monthlyPremium": 1800,
+        "outstandingAmount": 3600,
+        "lastPaymentDate": "2026-01-04T09:26:19.895Z",
+        "paymentStatus": "Pending"
+      },
+      "familyMembers": [
+        {
+          "id": "FM-8-1",
+          "fullName": "Omar Wael",
+          "relationship": "Son",
+          "gender": "Female",
+          "dateOfBirth": "1995-11-02T15:19:55.043Z",
+          "isCovered": true
+        }
+      ]
+    },
+    {
+      "id": "BEN-009",
+      "fullName": "Mostafa Wael",
+      "email": "mostafa.wael.9@example.com",
+      "nationality": "Lebanese",
+      "policyNumber": "POL-2026-1009",
+      "company": "AXA Group",
+      "plan": "Silver",
+      "coverageStatus": "Active",
+      "startDate": "2025-05-11T05:48:22.456Z",
+      "endDate": "2026-12-02T15:33:02.013Z",
+      "payment": {
+        "monthlyPremium": 1200,
+        "outstandingAmount": 3600,
+        "lastPaymentDate": "2026-03-09T19:33:29.383Z",
+        "paymentStatus": "Overdue"
+      },
+      "familyMembers": [
+        {
+          "id": "FM-9-1",
+          "fullName": "Karim Nabil",
+          "relationship": "Son",
+          "gender": "Female",
+          "dateOfBirth": "1992-12-07T02:07:20.905Z",
+          "isCovered": false
+        }
+      ]
+    },
+    {
+      "id": "BEN-010",
+      "fullName": "Omar Emad",
+      "email": "omar.emad.10@example.com",
+      "nationality": "Syrian",
+      "policyNumber": "POL-2026-1010",
+      "company": "Nile Tech",
+      "plan": "Platinum",
+      "coverageStatus": "Suspended",
+      "startDate": "2025-12-21T05:23:36.122Z",
+      "endDate": "2026-05-10T12:05:12.970Z",
+      "payment": {
+        "monthlyPremium": 2800,
+        "outstandingAmount": 8400,
+        "lastPaymentDate": "2026-02-07T06:46:14.544Z",
+        "paymentStatus": "Overdue"
+      },
+      "familyMembers": [
+        {
+          "id": "FM-10-1",
+          "fullName": "Tamer Samy",
+          "relationship": "Son",
+          "gender": "Male",
+          "dateOfBirth": "1979-12-13T15:47:01.891Z",
+          "isCovered": true
+        }
+      ]
+    },
+    {
+      "id": "BEN-011",
+      "fullName": "Youssef Ali",
+      "email": "youssef.ali.11@example.com",
+      "nationality": "Egyptian",
+      "policyNumber": "POL-2026-1011",
+      "company": "FinServe Egypt",
+      "plan": "Silver",
+      "coverageStatus": "Active",
+      "startDate": "2025-09-09T03:25:38.235Z",
+      "endDate": "2026-02-04T09:25:13.107Z",
+      "payment": {
+        "monthlyPremium": 1200,
+        "outstandingAmount": 2400,
+        "lastPaymentDate": "2026-01-16T11:34:39.857Z",
+        "paymentStatus": "Overdue"
+      },
+      "familyMembers": [
+        {
+          "id": "FM-11-1",
+          "fullName": "Tamer Emad",
+          "relationship": "Spouse",
+          "gender": "Female",
+          "dateOfBirth": "1975-07-03T10:42:35.205Z",
+          "isCovered": true
+        }
+      ]
+    },
+    {
+      "id": "BEN-012",
+      "fullName": "Youssef Hassan",
+      "email": "youssef.hassan.12@example.com",
+      "nationality": "Syrian",
+      "policyNumber": "POL-2026-1012",
+      "company": "MedCare Solutions",
+      "plan": "Silver",
+      "coverageStatus": "Active",
+      "startDate": "2025-10-19T00:26:56.103Z",
+      "endDate": "2026-08-16T03:11:09.944Z",
+      "payment": {
+        "monthlyPremium": 1200,
+        "outstandingAmount": 3600,
+        "lastPaymentDate": "2026-02-18T01:48:23.863Z",
+        "paymentStatus": "Overdue"
+      },
+      "familyMembers": [
+        {
+          "id": "FM-12-1",
+          "fullName": "Nour Wael",
+          "relationship": "Spouse",
+          "gender": "Male",
+          "dateOfBirth": "1981-12-20T16:50:57.830Z",
+          "isCovered": false
+        },
+        {
+          "id": "FM-12-2",
+          "fullName": "Hana Samy",
+          "relationship": "Spouse",
+          "gender": "Male",
+          "dateOfBirth": "1983-08-17T18:37:00.961Z",
+          "isCovered": true
+        }
+      ]
+    },
+    {
+      "id": "BEN-013",
+      "fullName": "Sara Mahmoud",
+      "email": "sara.mahmoud.13@example.com",
+      "nationality": "Egyptian",
+      "policyNumber": "POL-2026-1013",
+      "company": "Delta Finance",
+      "plan": "Silver",
+      "coverageStatus": "Expired",
+      "startDate": "2025-07-03T16:04:27.897Z",
+      "endDate": "2026-04-07T01:52:02.312Z",
+      "payment": {
+        "monthlyPremium": 1200,
+        "outstandingAmount": 0,
+        "lastPaymentDate": "2026-04-01T13:54:03.027Z",
+        "paymentStatus": "Paid"
+      },
+      "familyMembers": [
+        {
+          "id": "FM-13-1",
+          "fullName": "Omar Wael",
+          "relationship": "Daughter",
+          "gender": "Female",
+          "dateOfBirth": "1993-03-31T00:31:59.430Z",
+          "isCovered": false
+        },
+        {
+          "id": "FM-13-2",
+          "fullName": "Hana Ali",
+          "relationship": "Spouse",
+          "gender": "Female",
+          "dateOfBirth": "2001-10-11T14:10:59.359Z",
+          "isCovered": true
+        }
+      ]
+    },
+    {
+      "id": "BEN-014",
+      "fullName": "Mariam Ali",
+      "email": "mariam.ali.14@example.com",
+      "nationality": "Saudi",
+      "policyNumber": "POL-2026-1014",
+      "company": "Delta Finance",
+      "plan": "Gold",
+      "coverageStatus": "Expired",
+      "startDate": "2025-02-19T10:45:35.785Z",
+      "endDate": "2026-06-29T22:09:27.854Z",
+      "payment": {
+        "monthlyPremium": 1800,
+        "outstandingAmount": 0,
+        "lastPaymentDate": "2026-02-05T06:41:52.884Z",
+        "paymentStatus": "Paid"
+      },
+      "familyMembers": [
+        {
+          "id": "FM-14-1",
+          "fullName": "Nour Fathy",
+          "relationship": "Daughter",
+          "gender": "Male",
+          "dateOfBirth": "2018-09-09T02:10:29.921Z",
+          "isCovered": true
+        }
+      ]
+    },
+    {
+      "id": "BEN-015",
+      "fullName": "Nour Mahmoud",
+      "email": "nour.mahmoud.15@example.com",
+      "nationality": "Syrian",
+      "policyNumber": "POL-2026-1015",
+      "company": "Nile Tech",
+      "plan": "Silver",
+      "coverageStatus": "Suspended",
+      "startDate": "2025-06-27T01:53:31.023Z",
+      "endDate": "2026-05-01T01:03:07.846Z",
+      "payment": {
+        "monthlyPremium": 1200,
+        "outstandingAmount": 0,
+        "lastPaymentDate": "2026-03-19T06:14:30.510Z",
+        "paymentStatus": "Paid"
+      },
+      "familyMembers": [
+        {
+          "id": "FM-15-1",
+          "fullName": "Omar Hassan",
+          "relationship": "Daughter",
+          "gender": "Male",
+          "dateOfBirth": "1978-07-16T16:36:42.764Z",
+          "isCovered": false
+        }
+      ]
+    },
+    {
+      "id": "BEN-016",
+      "fullName": "Mostafa Wael",
+      "email": "mostafa.wael.16@example.com",
+      "nationality": "Egyptian",
+      "policyNumber": "POL-2026-1016",
+      "company": "AXA Group",
+      "plan": "Platinum",
+      "coverageStatus": "Active",
+      "startDate": "2025-12-16T22:33:53.941Z",
+      "endDate": "2026-10-08T08:53:14.631Z",
+      "payment": {
+        "monthlyPremium": 2800,
+        "outstandingAmount": 5600,
+        "lastPaymentDate": "2026-01-04T13:26:31.089Z",
+        "paymentStatus": "Pending"
+      },
+      "familyMembers": [
+        {
+          "id": "FM-16-1",
+          "fullName": "Ahmed Emad",
+          "relationship": "Son",
+          "gender": "Female",
+          "dateOfBirth": "2013-12-08T07:20:41.180Z",
+          "isCovered": false
+        },
+        {
+          "id": "FM-16-2",
+          "fullName": "Karim Wael",
+          "relationship": "Daughter",
+          "gender": "Female",
+          "dateOfBirth": "1988-07-24T07:57:01.762Z",
+          "isCovered": true
+        }
+      ]
+    },
+    {
+      "id": "BEN-017",
+      "fullName": "Ahmed Nabil",
+      "email": "ahmed.nabil.17@example.com",
+      "nationality": "Egyptian",
+      "policyNumber": "POL-2026-1017",
+      "company": "MedCare Solutions",
+      "plan": "Silver",
+      "coverageStatus": "Active",
+      "startDate": "2025-05-25T02:32:39.184Z",
+      "endDate": "2026-09-25T03:52:07.931Z",
+      "payment": {
+        "monthlyPremium": 1200,
+        "outstandingAmount": 2400,
+        "lastPaymentDate": "2026-04-22T03:35:37.209Z",
+        "paymentStatus": "Pending"
+      },
+      "familyMembers": [
+        {
+          "id": "FM-17-1",
+          "fullName": "Ahmed Hassan",
+          "relationship": "Daughter",
+          "gender": "Female",
+          "dateOfBirth": "1982-11-25T04:43:04.374Z",
+          "isCovered": true
+        }
+      ]
+    },
+    {
+      "id": "BEN-018",
+      "fullName": "Amr Mahmoud",
+      "email": "amr.mahmoud.18@example.com",
+      "nationality": "Syrian",
+      "policyNumber": "POL-2026-1018",
+      "company": "AXA Group",
+      "plan": "Platinum",
+      "coverageStatus": "Active",
+      "startDate": "2025-04-21T11:26:18.203Z",
+      "endDate": "2026-04-15T20:00:42.921Z",
+      "payment": {
+        "monthlyPremium": 2800,
+        "outstandingAmount": 2800,
+        "lastPaymentDate": "2026-03-04T12:14:42.506Z",
+        "paymentStatus": "Overdue"
+      },
+      "familyMembers": [
+        {
+          "id": "FM-18-1",
+          "fullName": "Omar Tarek",
+          "relationship": "Son",
+          "gender": "Male",
+          "dateOfBirth": "1996-11-18T13:59:06.822Z",
+          "isCovered": false
+        },
+        {
+          "id": "FM-18-2",
+          "fullName": "Youssef Emad",
+          "relationship": "Daughter",
+          "gender": "Male",
+          "dateOfBirth": "1995-07-25T11:04:02.663Z",
+          "isCovered": true
+        }
+      ]
+    },
+    {
+      "id": "BEN-019",
+      "fullName": "Ahmed Tarek",
+      "email": "ahmed.tarek.19@example.com",
+      "nationality": "Saudi",
+      "policyNumber": "POL-2026-1019",
+      "company": "AXA Group",
+      "plan": "Gold",
+      "coverageStatus": "Suspended",
+      "startDate": "2025-08-07T08:11:41.644Z",
+      "endDate": "2026-03-08T20:07:11.137Z",
+      "payment": {
+        "monthlyPremium": 1800,
+        "outstandingAmount": 1800,
+        "lastPaymentDate": "2026-04-03T17:02:28.504Z",
+        "paymentStatus": "Pending"
+      },
+      "familyMembers": [
+        {
+          "id": "FM-19-1",
+          "fullName": "Mariam Fathy",
+          "relationship": "Spouse",
+          "gender": "Female",
+          "dateOfBirth": "1974-01-05T05:45:00.339Z",
+          "isCovered": true
+        }
+      ]
+    },
+    {
+      "id": "BEN-020",
+      "fullName": "Mohamed Adel",
+      "email": "mohamed.adel.20@example.com",
+      "nationality": "Lebanese",
+      "policyNumber": "POL-2026-1020",
+      "company": "AXA Group",
+      "plan": "Silver",
+      "coverageStatus": "Active",
+      "startDate": "2025-07-06T00:52:58.635Z",
+      "endDate": "2026-06-21T03:48:41.466Z",
+      "payment": {
+        "monthlyPremium": 1200,
+        "outstandingAmount": 1200,
+        "lastPaymentDate": "2026-04-05T00:55:14.637Z",
+        "paymentStatus": "Pending"
+      },
+      "familyMembers": []
+    },
+    {
+      "id": "BEN-021",
+      "fullName": "Sara Adel",
+      "email": "sara.adel.21@example.com",
+      "nationality": "Egyptian",
+      "policyNumber": "POL-2026-1021",
+      "company": "FinServe Egypt",
+      "plan": "Silver",
+      "coverageStatus": "Suspended",
+      "startDate": "2025-11-14T21:09:44.187Z",
+      "endDate": "2026-01-05T00:04:59.912Z",
+      "payment": {
+        "monthlyPremium": 1200,
+        "outstandingAmount": 1200,
+        "lastPaymentDate": "2026-01-23T02:19:29.616Z",
+        "paymentStatus": "Pending"
+      },
+      "familyMembers": [
+        {
+          "id": "FM-21-1",
+          "fullName": "Sara Sherif",
+          "relationship": "Spouse",
+          "gender": "Male",
+          "dateOfBirth": "1977-05-05T16:38:54.427Z",
+          "isCovered": true
+        },
+        {
+          "id": "FM-21-2",
+          "fullName": "Ahmed Emad",
+          "relationship": "Son",
+          "gender": "Male",
+          "dateOfBirth": "2012-12-01T18:49:28.890Z",
+          "isCovered": true
+        }
+      ]
+    },
+    {
+      "id": "BEN-022",
+      "fullName": "Salma Mahmoud",
+      "email": "salma.mahmoud.22@example.com",
+      "nationality": "Saudi",
+      "policyNumber": "POL-2026-1022",
+      "company": "Delta Finance",
+      "plan": "Silver",
+      "coverageStatus": "Suspended",
+      "startDate": "2025-01-20T19:18:48.572Z",
+      "endDate": "2026-02-16T08:40:14.967Z",
+      "payment": {
+        "monthlyPremium": 1200,
+        "outstandingAmount": 0,
+        "lastPaymentDate": "2026-01-26T04:37:51.467Z",
+        "paymentStatus": "Paid"
+      },
+      "familyMembers": []
+    },
+    {
+      "id": "BEN-023",
+      "fullName": "Hana Hassan",
+      "email": "hana.hassan.23@example.com",
+      "nationality": "Syrian",
+      "policyNumber": "POL-2026-1023",
+      "company": "FinServe Egypt",
+      "plan": "Gold",
+      "coverageStatus": "Expired",
+      "startDate": "2025-11-30T08:36:13.883Z",
+      "endDate": "2026-08-17T19:12:56.452Z",
+      "payment": {
+        "monthlyPremium": 1800,
+        "outstandingAmount": 0,
+        "lastPaymentDate": "2026-02-12T17:14:25.884Z",
+        "paymentStatus": "Paid"
+      },
+      "familyMembers": [
+        {
+          "id": "FM-23-1",
+          "fullName": "Amr Mahmoud",
+          "relationship": "Daughter",
+          "gender": "Male",
+          "dateOfBirth": "2008-02-15T14:09:48.469Z",
+          "isCovered": true
+        },
+        {
+          "id": "FM-23-2",
+          "fullName": "Omar Mahmoud",
+          "relationship": "Son",
+          "gender": "Female",
+          "dateOfBirth": "2019-12-27T23:32:10.651Z",
+          "isCovered": true
+        }
+      ]
+    },
+    {
+      "id": "BEN-024",
+      "fullName": "Mariam Nabil",
+      "email": "mariam.nabil.24@example.com",
+      "nationality": "Egyptian",
+      "policyNumber": "POL-2026-1024",
+      "company": "Delta Finance",
+      "plan": "Silver",
+      "coverageStatus": "Active",
+      "startDate": "2025-08-01T22:08:59.370Z",
+      "endDate": "2026-10-05T02:13:28.680Z",
+      "payment": {
+        "monthlyPremium": 1200,
+        "outstandingAmount": 3600,
+        "lastPaymentDate": "2026-01-20T07:10:10.872Z",
+        "paymentStatus": "Pending"
+      },
+      "familyMembers": [
+        {
+          "id": "FM-24-1",
+          "fullName": "Nour Wael",
+          "relationship": "Spouse",
+          "gender": "Male",
+          "dateOfBirth": "2007-03-07T07:42:15.720Z",
+          "isCovered": false
+        }
+      ]
+    },
+    {
+      "id": "BEN-025",
+      "fullName": "Hana Samy",
+      "email": "hana.samy.25@example.com",
+      "nationality": "Lebanese",
+      "policyNumber": "POL-2026-1025",
+      "company": "Delta Finance",
+      "plan": "Platinum",
+      "coverageStatus": "Active",
+      "startDate": "2025-05-23T18:30:41.301Z",
+      "endDate": "2026-11-04T14:23:10.981Z",
+      "payment": {
+        "monthlyPremium": 2800,
+        "outstandingAmount": 0,
+        "lastPaymentDate": "2026-02-07T09:17:33.978Z",
+        "paymentStatus": "Paid"
+      },
+      "familyMembers": []
+    },
+    {
+      "id": "BEN-026",
+      "fullName": "Youssef Hassan",
+      "email": "youssef.hassan.26@example.com",
+      "nationality": "Saudi",
+      "policyNumber": "POL-2026-1026",
+      "company": "Delta Finance",
+      "plan": "Silver",
+      "coverageStatus": "Active",
+      "startDate": "2025-01-16T02:28:09.402Z",
+      "endDate": "2026-07-05T00:58:41.948Z",
+      "payment": {
+        "monthlyPremium": 1200,
+        "outstandingAmount": 0,
+        "lastPaymentDate": "2026-04-22T02:49:28.955Z",
+        "paymentStatus": "Paid"
+      },
+      "familyMembers": [
+        {
+          "id": "FM-26-1",
+          "fullName": "Nour Fathy",
+          "relationship": "Spouse",
+          "gender": "Male",
+          "dateOfBirth": "1980-03-13T19:01:35.641Z",
+          "isCovered": true
+        }
+      ]
+    },
+    {
+      "id": "BEN-027",
+      "fullName": "Mohamed Samy",
+      "email": "mohamed.samy.27@example.com",
+      "nationality": "Syrian",
+      "policyNumber": "POL-2026-1027",
+      "company": "AXA Group",
+      "plan": "Silver",
+      "coverageStatus": "Active",
+      "startDate": "2025-10-02T18:35:59.387Z",
+      "endDate": "2026-08-03T17:03:41.715Z",
+      "payment": {
+        "monthlyPremium": 1200,
+        "outstandingAmount": 0,
+        "lastPaymentDate": "2026-03-15T00:13:40.562Z",
+        "paymentStatus": "Paid"
+      },
+      "familyMembers": [
+        {
+          "id": "FM-27-1",
+          "fullName": "Amr Nabil",
+          "relationship": "Spouse",
+          "gender": "Male",
+          "dateOfBirth": "1975-09-19T07:38:25.803Z",
+          "isCovered": true
+        },
+        {
+          "id": "FM-27-2",
+          "fullName": "Omar Mahmoud",
+          "relationship": "Son",
+          "gender": "Female",
+          "dateOfBirth": "1989-08-08T12:56:09.881Z",
+          "isCovered": true
+        }
+      ]
+    },
+    {
+      "id": "BEN-028",
+      "fullName": "Karim Adel",
+      "email": "karim.adel.28@example.com",
+      "nationality": "Lebanese",
+      "policyNumber": "POL-2026-1028",
+      "company": "FinServe Egypt",
+      "plan": "Silver",
+      "coverageStatus": "Expired",
+      "startDate": "2025-10-23T21:51:57.940Z",
+      "endDate": "2026-06-09T21:12:32.645Z",
+      "payment": {
+        "monthlyPremium": 1200,
+        "outstandingAmount": 2400,
+        "lastPaymentDate": "2026-01-27T09:56:25.593Z",
+        "paymentStatus": "Overdue"
+      },
+      "familyMembers": [
+        {
+          "id": "FM-28-1",
+          "fullName": "Ahmed Wael",
+          "relationship": "Spouse",
+          "gender": "Female",
+          "dateOfBirth": "1988-05-01T00:32:32.797Z",
+          "isCovered": true
+        }
+      ]
+    },
+    {
+      "id": "BEN-029",
+      "fullName": "Salma Sherif",
+      "email": "salma.sherif.29@example.com",
+      "nationality": "Egyptian",
+      "policyNumber": "POL-2026-1029",
+      "company": "AXA Group",
+      "plan": "Platinum",
+      "coverageStatus": "Expired",
+      "startDate": "2025-08-30T17:49:59.486Z",
+      "endDate": "2026-10-10T13:47:42.574Z",
+      "payment": {
+        "monthlyPremium": 2800,
+        "outstandingAmount": 0,
+        "lastPaymentDate": "2026-02-05T19:47:45.649Z",
+        "paymentStatus": "Paid"
+      },
+      "familyMembers": [
+        {
+          "id": "FM-29-1",
+          "fullName": "Hana Khaled",
+          "relationship": "Son",
+          "gender": "Male",
+          "dateOfBirth": "2006-02-22T19:18:32.014Z",
+          "isCovered": true
+        }
+      ]
+    },
+    {
+      "id": "BEN-030",
+      "fullName": "Omar Tarek",
+      "email": "omar.tarek.30@example.com",
+      "nationality": "Egyptian",
+      "policyNumber": "POL-2026-1030",
+      "company": "MedCare Solutions",
+      "plan": "Silver",
+      "coverageStatus": "Expired",
+      "startDate": "2025-03-03T04:40:02.904Z",
+      "endDate": "2026-05-25T14:49:41.407Z",
+      "payment": {
+        "monthlyPremium": 1200,
+        "outstandingAmount": 3600,
+        "lastPaymentDate": "2026-01-07T19:52:42.853Z",
+        "paymentStatus": "Pending"
+      },
+      "familyMembers": [
+        {
+          "id": "FM-30-1",
+          "fullName": "Laila Nabil",
+          "relationship": "Son",
+          "gender": "Female",
+          "dateOfBirth": "1986-07-13T10:17:53.389Z",
+          "isCovered": true
+        },
+        {
+          "id": "FM-30-2",
+          "fullName": "Sara Samy",
+          "relationship": "Daughter",
+          "gender": "Male",
+          "dateOfBirth": "1999-06-30T04:55:15.020Z",
+          "isCovered": true
+        }
+      ]
+    },
+    {
+      "id": "BEN-031",
+      "fullName": "Nour Samy",
+      "email": "nour.samy.31@example.com",
+      "nationality": "Saudi",
+      "policyNumber": "POL-2026-1031",
+      "company": "MedCare Solutions",
+      "plan": "Platinum",
+      "coverageStatus": "Suspended",
+      "startDate": "2025-03-04T22:39:26.865Z",
+      "endDate": "2026-08-06T22:05:59.950Z",
+      "payment": {
+        "monthlyPremium": 2800,
+        "outstandingAmount": 0,
+        "lastPaymentDate": "2026-01-22T09:50:39.825Z",
+        "paymentStatus": "Paid"
+      },
+      "familyMembers": [
+        {
+          "id": "FM-31-1",
+          "fullName": "Youssef Adel",
+          "relationship": "Spouse",
+          "gender": "Male",
+          "dateOfBirth": "2001-03-17T19:09:47.211Z",
+          "isCovered": true
+        },
+        {
+          "id": "FM-31-2",
+          "fullName": "Salma Fathy",
+          "relationship": "Son",
+          "gender": "Female",
+          "dateOfBirth": "1993-08-26T06:20:03.148Z",
+          "isCovered": true
+        }
+      ]
+    },
+    {
+      "id": "BEN-032",
+      "fullName": "Tamer Hassan",
+      "email": "tamer.hassan.32@example.com",
+      "nationality": "Lebanese",
+      "policyNumber": "POL-2026-1032",
+      "company": "FinServe Egypt",
+      "plan": "Platinum",
+      "coverageStatus": "Expired",
+      "startDate": "2025-10-26T20:44:09.680Z",
+      "endDate": "2026-03-16T23:10:48.868Z",
+      "payment": {
+        "monthlyPremium": 2800,
+        "outstandingAmount": 0,
+        "lastPaymentDate": "2026-03-10T11:50:00.284Z",
+        "paymentStatus": "Paid"
+      },
+      "familyMembers": [
+        {
+          "id": "FM-32-1",
+          "fullName": "Amr Wael",
+          "relationship": "Spouse",
+          "gender": "Male",
+          "dateOfBirth": "2009-04-17T10:53:53.794Z",
+          "isCovered": false
+        }
+      ]
+    },
+    {
+      "id": "BEN-033",
+      "fullName": "Amr Mahmoud",
+      "email": "amr.mahmoud.33@example.com",
+      "nationality": "Lebanese",
+      "policyNumber": "POL-2026-1033",
+      "company": "FinServe Egypt",
+      "plan": "Platinum",
+      "coverageStatus": "Expired",
+      "startDate": "2025-03-25T17:15:12.770Z",
+      "endDate": "2026-05-14T02:02:23.413Z",
+      "payment": {
+        "monthlyPremium": 2800,
+        "outstandingAmount": 0,
+        "lastPaymentDate": "2026-01-29T19:34:00.652Z",
+        "paymentStatus": "Paid"
+      },
+      "familyMembers": []
+    },
+    {
+      "id": "BEN-034",
+      "fullName": "Nour Mahmoud",
+      "email": "nour.mahmoud.34@example.com",
+      "nationality": "Syrian",
+      "policyNumber": "POL-2026-1034",
+      "company": "FinServe Egypt",
+      "plan": "Platinum",
+      "coverageStatus": "Expired",
+      "startDate": "2025-02-15T04:33:15.677Z",
+      "endDate": "2026-08-17T09:14:19.968Z",
+      "payment": {
+        "monthlyPremium": 2800,
+        "outstandingAmount": 0,
+        "lastPaymentDate": "2026-03-04T00:00:36.875Z",
+        "paymentStatus": "Paid"
+      },
+      "familyMembers": []
+    },
+    {
+      "id": "BEN-035",
+      "fullName": "Sara Nabil",
+      "email": "sara.nabil.35@example.com",
+      "nationality": "Syrian",
+      "policyNumber": "POL-2026-1035",
+      "company": "Nile Tech",
+      "plan": "Platinum",
+      "coverageStatus": "Active",
+      "startDate": "2025-05-21T16:19:55.955Z",
+      "endDate": "2026-09-07T21:02:08.762Z",
+      "payment": {
+        "monthlyPremium": 2800,
+        "outstandingAmount": 0,
+        "lastPaymentDate": "2026-02-15T08:39:04.202Z",
+        "paymentStatus": "Paid"
+      },
+      "familyMembers": [
+        {
+          "id": "FM-35-1",
+          "fullName": "Mohamed Sherif",
+          "relationship": "Son",
+          "gender": "Female",
+          "dateOfBirth": "1973-05-13T13:43:40.914Z",
+          "isCovered": true
+        },
+        {
+          "id": "FM-35-2",
+          "fullName": "Nour Nabil",
+          "relationship": "Son",
+          "gender": "Female",
+          "dateOfBirth": "1971-09-05T10:53:25.708Z",
+          "isCovered": false
+        }
+      ]
+    },
+    {
+      "id": "BEN-036",
+      "fullName": "Amr Tarek",
+      "email": "amr.tarek.36@example.com",
+      "nationality": "Syrian",
+      "policyNumber": "POL-2026-1036",
+      "company": "Delta Finance",
+      "plan": "Platinum",
+      "coverageStatus": "Suspended",
+      "startDate": "2025-04-18T04:15:17.863Z",
+      "endDate": "2026-10-29T00:45:57.315Z",
+      "payment": {
+        "monthlyPremium": 2800,
+        "outstandingAmount": 0,
+        "lastPaymentDate": "2026-02-10T12:29:22.196Z",
+        "paymentStatus": "Paid"
+      },
+      "familyMembers": []
+    },
+    {
+      "id": "BEN-037",
+      "fullName": "Mostafa Ali",
+      "email": "mostafa.ali.37@example.com",
+      "nationality": "Syrian",
+      "policyNumber": "POL-2026-1037",
+      "company": "Delta Finance",
+      "plan": "Silver",
+      "coverageStatus": "Expired",
+      "startDate": "2025-01-16T23:24:53.073Z",
+      "endDate": "2026-09-24T05:31:36.306Z",
+      "payment": {
+        "monthlyPremium": 1200,
+        "outstandingAmount": 1200,
+        "lastPaymentDate": "2026-04-10T22:37:20.835Z",
+        "paymentStatus": "Pending"
+      },
+      "familyMembers": [
+        {
+          "id": "FM-37-1",
+          "fullName": "Amr Hassan",
+          "relationship": "Spouse",
+          "gender": "Male",
+          "dateOfBirth": "1974-07-31T16:53:40.776Z",
+          "isCovered": false
+        },
+        {
+          "id": "FM-37-2",
+          "fullName": "Mariam Sherif",
+          "relationship": "Spouse",
+          "gender": "Male",
+          "dateOfBirth": "1983-07-02T10:53:04.171Z",
+          "isCovered": true
+        }
+      ]
+    },
+    {
+      "id": "BEN-038",
+      "fullName": "Karim Khaled",
+      "email": "karim.khaled.38@example.com",
+      "nationality": "Egyptian",
+      "policyNumber": "POL-2026-1038",
+      "company": "Nile Tech",
+      "plan": "Gold",
+      "coverageStatus": "Suspended",
+      "startDate": "2025-01-28T10:27:49.454Z",
+      "endDate": "2026-07-17T10:28:28.795Z",
+      "payment": {
+        "monthlyPremium": 1800,
+        "outstandingAmount": 1800,
+        "lastPaymentDate": "2026-01-11T05:31:06.714Z",
+        "paymentStatus": "Overdue"
+      },
+      "familyMembers": [
+        {
+          "id": "FM-38-1",
+          "fullName": "Laila Sherif",
+          "relationship": "Daughter",
+          "gender": "Female",
+          "dateOfBirth": "1994-06-12T23:21:53.723Z",
+          "isCovered": true
+        },
+        {
+          "id": "FM-38-2",
+          "fullName": "Laila Hassan",
+          "relationship": "Spouse",
+          "gender": "Female",
+          "dateOfBirth": "2004-08-02T02:53:10.126Z",
+          "isCovered": true
+        }
+      ]
+    },
+    {
+      "id": "BEN-039",
+      "fullName": "Mohamed Samy",
+      "email": "mohamed.samy.39@example.com",
+      "nationality": "Saudi",
+      "policyNumber": "POL-2026-1039",
+      "company": "Delta Finance",
+      "plan": "Silver",
+      "coverageStatus": "Expired",
+      "startDate": "2025-07-17T20:48:08.024Z",
+      "endDate": "2026-10-11T09:46:33.503Z",
+      "payment": {
+        "monthlyPremium": 1200,
+        "outstandingAmount": 0,
+        "lastPaymentDate": "2026-04-22T19:35:26.081Z",
+        "paymentStatus": "Paid"
+      },
+      "familyMembers": [
+        {
+          "id": "FM-39-1",
+          "fullName": "Omar Nabil",
+          "relationship": "Daughter",
+          "gender": "Female",
+          "dateOfBirth": "1976-05-14T08:43:40.239Z",
+          "isCovered": false
+        },
+        {
+          "id": "FM-39-2",
+          "fullName": "Laila Sherif",
+          "relationship": "Son",
+          "gender": "Female",
+          "dateOfBirth": "2001-12-07T18:22:08.891Z",
+          "isCovered": true
+        }
+      ]
+    },
+    {
+      "id": "BEN-040",
+      "fullName": "Tamer Ali",
+      "email": "tamer.ali.40@example.com",
+      "nationality": "Syrian",
+      "policyNumber": "POL-2026-1040",
+      "company": "Delta Finance",
+      "plan": "Gold",
+      "coverageStatus": "Expired",
+      "startDate": "2025-06-14T17:22:46.005Z",
+      "endDate": "2026-02-16T11:07:17.609Z",
+      "payment": {
+        "monthlyPremium": 1800,
+        "outstandingAmount": 0,
+        "lastPaymentDate": "2026-03-18T03:11:39.143Z",
+        "paymentStatus": "Paid"
+      },
+      "familyMembers": [
+        {
+          "id": "FM-40-1",
+          "fullName": "Tamer Samy",
+          "relationship": "Son",
+          "gender": "Male",
+          "dateOfBirth": "1971-07-26T03:50:23.875Z",
+          "isCovered": true
+        },
+        {
+          "id": "FM-40-2",
+          "fullName": "Omar Emad",
+          "relationship": "Spouse",
+          "gender": "Female",
+          "dateOfBirth": "1991-06-18T12:46:32.081Z",
+          "isCovered": false
+        }
+      ]
+    },
+    {
+      "id": "BEN-041",
+      "fullName": "Mostafa Fathy",
+      "email": "mostafa.fathy.41@example.com",
+      "nationality": "Egyptian",
+      "policyNumber": "POL-2026-1041",
+      "company": "Nile Tech",
+      "plan": "Platinum",
+      "coverageStatus": "Active",
+      "startDate": "2025-12-17T20:00:35.946Z",
+      "endDate": "2026-06-27T03:28:32.482Z",
+      "payment": {
+        "monthlyPremium": 2800,
+        "outstandingAmount": 5600,
+        "lastPaymentDate": "2026-01-13T06:51:06.591Z",
+        "paymentStatus": "Pending"
+      },
+      "familyMembers": [
+        {
+          "id": "FM-41-1",
+          "fullName": "Salma Samy",
+          "relationship": "Son",
+          "gender": "Female",
+          "dateOfBirth": "1987-01-26T03:39:20.798Z",
+          "isCovered": false
+        },
+        {
+          "id": "FM-41-2",
+          "fullName": "Mostafa Khaled",
+          "relationship": "Spouse",
+          "gender": "Female",
+          "dateOfBirth": "2015-10-03T22:48:14.810Z",
+          "isCovered": true
+        }
+      ]
+    },
+    {
+      "id": "BEN-042",
+      "fullName": "Salma Fathy",
+      "email": "salma.fathy.42@example.com",
+      "nationality": "Syrian",
+      "policyNumber": "POL-2026-1042",
+      "company": "MedCare Solutions",
+      "plan": "Gold",
+      "coverageStatus": "Active",
+      "startDate": "2025-03-09T19:24:16.388Z",
+      "endDate": "2026-06-03T18:02:50.010Z",
+      "payment": {
+        "monthlyPremium": 1800,
+        "outstandingAmount": 5400,
+        "lastPaymentDate": "2026-04-02T15:05:56.633Z",
+        "paymentStatus": "Pending"
+      },
+      "familyMembers": [
+        {
+          "id": "FM-42-1",
+          "fullName": "Omar Khaled",
+          "relationship": "Son",
+          "gender": "Male",
+          "dateOfBirth": "1997-01-12T17:23:12.025Z",
+          "isCovered": false
+        },
+        {
+          "id": "FM-42-2",
+          "fullName": "Mohamed Adel",
+          "relationship": "Son",
+          "gender": "Male",
+          "dateOfBirth": "1970-02-23T06:52:13.934Z",
+          "isCovered": true
+        }
+      ]
+    },
+    {
+      "id": "BEN-043",
+      "fullName": "Omar Emad",
+      "email": "omar.emad.43@example.com",
+      "nationality": "Egyptian",
+      "policyNumber": "POL-2026-1043",
+      "company": "AXA Group",
+      "plan": "Gold",
+      "coverageStatus": "Expired",
+      "startDate": "2025-06-26T23:12:08.989Z",
+      "endDate": "2026-01-15T02:23:02.416Z",
+      "payment": {
+        "monthlyPremium": 1800,
+        "outstandingAmount": 1800,
+        "lastPaymentDate": "2026-02-20T14:11:53.654Z",
+        "paymentStatus": "Overdue"
+      },
+      "familyMembers": []
+    },
+    {
+      "id": "BEN-044",
+      "fullName": "Mostafa Sherif",
+      "email": "mostafa.sherif.44@example.com",
+      "nationality": "Syrian",
+      "policyNumber": "POL-2026-1044",
+      "company": "FinServe Egypt",
+      "plan": "Platinum",
+      "coverageStatus": "Expired",
+      "startDate": "2025-04-13T06:52:47.139Z",
+      "endDate": "2026-04-10T18:01:25.804Z",
+      "payment": {
+        "monthlyPremium": 2800,
+        "outstandingAmount": 8400,
+        "lastPaymentDate": "2026-04-05T12:21:12.881Z",
+        "paymentStatus": "Overdue"
+      },
+      "familyMembers": [
+        {
+          "id": "FM-44-1",
+          "fullName": "Mostafa Hassan",
+          "relationship": "Daughter",
+          "gender": "Female",
+          "dateOfBirth": "1982-10-12T06:04:44.690Z",
+          "isCovered": false
+        },
+        {
+          "id": "FM-44-2",
+          "fullName": "Tamer Nabil",
+          "relationship": "Spouse",
+          "gender": "Male",
+          "dateOfBirth": "2019-09-30T15:01:42.558Z",
+          "isCovered": true
+        }
+      ]
+    },
+    {
+      "id": "BEN-045",
+      "fullName": "Nour Hassan",
+      "email": "nour.hassan.45@example.com",
+      "nationality": "Syrian",
+      "policyNumber": "POL-2026-1045",
+      "company": "MedCare Solutions",
+      "plan": "Gold",
+      "coverageStatus": "Active",
+      "startDate": "2025-11-19T13:53:42.775Z",
+      "endDate": "2026-06-19T10:44:16.762Z",
+      "payment": {
+        "monthlyPremium": 1800,
+        "outstandingAmount": 0,
+        "lastPaymentDate": "2026-02-15T03:31:12.484Z",
+        "paymentStatus": "Paid"
+      },
+      "familyMembers": []
+    },
+    {
+      "id": "BEN-046",
+      "fullName": "Karim Fathy",
+      "email": "karim.fathy.46@example.com",
+      "nationality": "Egyptian",
+      "policyNumber": "POL-2026-1046",
+      "company": "MedCare Solutions",
+      "plan": "Gold",
+      "coverageStatus": "Suspended",
+      "startDate": "2025-08-03T22:24:42.697Z",
+      "endDate": "2026-01-24T10:43:28.168Z",
+      "payment": {
+        "monthlyPremium": 1800,
+        "outstandingAmount": 1800,
+        "lastPaymentDate": "2026-02-26T04:45:27.626Z",
+        "paymentStatus": "Overdue"
+      },
+      "familyMembers": [
+        {
+          "id": "FM-46-1",
+          "fullName": "Hana Samy",
+          "relationship": "Daughter",
+          "gender": "Female",
+          "dateOfBirth": "1990-02-23T05:59:28.085Z",
+          "isCovered": true
+        }
+      ]
+    },
+    {
+      "id": "BEN-047",
+      "fullName": "Hana Tarek",
+      "email": "hana.tarek.47@example.com",
+      "nationality": "Syrian",
+      "policyNumber": "POL-2026-1047",
+      "company": "MedCare Solutions",
+      "plan": "Silver",
+      "coverageStatus": "Active",
+      "startDate": "2025-02-20T04:27:41.564Z",
+      "endDate": "2026-06-07T02:43:10.249Z",
+      "payment": {
+        "monthlyPremium": 1200,
+        "outstandingAmount": 0,
+        "lastPaymentDate": "2026-03-06T21:24:38.709Z",
+        "paymentStatus": "Paid"
+      },
+      "familyMembers": [
+        {
+          "id": "FM-47-1",
+          "fullName": "Mariam Tarek",
+          "relationship": "Son",
+          "gender": "Female",
+          "dateOfBirth": "2020-06-27T08:01:11.697Z",
+          "isCovered": true
+        },
+        {
+          "id": "FM-47-2",
+          "fullName": "Laila Adel",
+          "relationship": "Son",
+          "gender": "Female",
+          "dateOfBirth": "2009-09-22T05:11:51.415Z",
+          "isCovered": true
+        }
+      ]
+    },
+    {
+      "id": "BEN-048",
+      "fullName": "Nour Emad",
+      "email": "nour.emad.48@example.com",
+      "nationality": "Syrian",
+      "policyNumber": "POL-2026-1048",
+      "company": "MedCare Solutions",
+      "plan": "Platinum",
+      "coverageStatus": "Active",
+      "startDate": "2025-01-02T13:48:19.361Z",
+      "endDate": "2026-04-10T23:38:30.361Z",
+      "payment": {
+        "monthlyPremium": 2800,
+        "outstandingAmount": 2800,
+        "lastPaymentDate": "2026-03-22T04:33:07.187Z",
+        "paymentStatus": "Pending"
+      },
+      "familyMembers": []
+    },
+    {
+      "id": "BEN-049",
+      "fullName": "Sara Nabil",
+      "email": "sara.nabil.49@example.com",
+      "nationality": "Egyptian",
+      "policyNumber": "POL-2026-1049",
+      "company": "Nile Tech",
+      "plan": "Silver",
+      "coverageStatus": "Active",
+      "startDate": "2025-01-15T01:35:02.915Z",
+      "endDate": "2026-05-02T18:26:50.126Z",
+      "payment": {
+        "monthlyPremium": 1200,
+        "outstandingAmount": 1200,
+        "lastPaymentDate": "2026-03-20T23:20:08.995Z",
+        "paymentStatus": "Overdue"
+      },
+      "familyMembers": [
+        {
+          "id": "FM-49-1",
+          "fullName": "Ahmed Khaled",
+          "relationship": "Daughter",
+          "gender": "Male",
+          "dateOfBirth": "1985-09-22T08:02:58.834Z",
+          "isCovered": false
+        }
+      ]
+    },
+    {
+      "id": "BEN-050",
+      "fullName": "Hana Wael",
+      "email": "hana.wael.50@example.com",
+      "nationality": "Lebanese",
+      "policyNumber": "POL-2026-1050",
+      "company": "MedCare Solutions",
+      "plan": "Gold",
+      "coverageStatus": "Expired",
+      "startDate": "2025-11-15T19:01:03.377Z",
+      "endDate": "2026-10-17T07:31:10.136Z",
+      "payment": {
+        "monthlyPremium": 1800,
+        "outstandingAmount": 1800,
+        "lastPaymentDate": "2026-02-26T17:33:47.216Z",
+        "paymentStatus": "Pending"
+      },
+      "familyMembers": []
+    },
+    {
+      "id": "BEN-051",
+      "fullName": "Mostafa Adel",
+      "email": "mostafa.adel.51@example.com",
+      "nationality": "Syrian",
+      "policyNumber": "POL-2026-1051",
+      "company": "AXA Group",
+      "plan": "Silver",
+      "coverageStatus": "Active",
+      "startDate": "2025-08-28T13:59:27.194Z",
+      "endDate": "2026-11-20T05:59:46.895Z",
+      "payment": {
+        "monthlyPremium": 1200,
+        "outstandingAmount": 1200,
+        "lastPaymentDate": "2026-04-10T03:26:42.849Z",
+        "paymentStatus": "Overdue"
+      },
+      "familyMembers": [
+        {
+          "id": "FM-51-1",
+          "fullName": "Nour Samy",
+          "relationship": "Son",
+          "gender": "Female",
+          "dateOfBirth": "1981-01-10T14:45:06.035Z",
+          "isCovered": true
+        },
+        {
+          "id": "FM-51-2",
+          "fullName": "Mariam Nabil",
+          "relationship": "Son",
+          "gender": "Female",
+          "dateOfBirth": "1974-04-28T06:31:47.516Z",
+          "isCovered": false
+        }
+      ]
+    },
+    {
+      "id": "BEN-052",
+      "fullName": "Amr Nabil",
+      "email": "amr.nabil.52@example.com",
+      "nationality": "Saudi",
+      "policyNumber": "POL-2026-1052",
+      "company": "Delta Finance",
+      "plan": "Platinum",
+      "coverageStatus": "Suspended",
+      "startDate": "2025-05-13T10:11:38.488Z",
+      "endDate": "2026-04-05T01:42:33.232Z",
+      "payment": {
+        "monthlyPremium": 2800,
+        "outstandingAmount": 5600,
+        "lastPaymentDate": "2026-03-19T16:39:50.873Z",
+        "paymentStatus": "Overdue"
+      },
+      "familyMembers": [
+        {
+          "id": "FM-52-1",
+          "fullName": "Karim Mahmoud",
+          "relationship": "Spouse",
+          "gender": "Female",
+          "dateOfBirth": "2007-10-15T03:47:20.312Z",
+          "isCovered": true
+        }
+      ]
+    },
+    {
+      "id": "BEN-053",
+      "fullName": "Mohamed Samy",
+      "email": "mohamed.samy.53@example.com",
+      "nationality": "Egyptian",
+      "policyNumber": "POL-2026-1053",
+      "company": "MedCare Solutions",
+      "plan": "Silver",
+      "coverageStatus": "Expired",
+      "startDate": "2025-04-12T03:36:26.576Z",
+      "endDate": "2026-09-14T20:59:54.630Z",
+      "payment": {
+        "monthlyPremium": 1200,
+        "outstandingAmount": 1200,
+        "lastPaymentDate": "2026-03-07T23:18:14.813Z",
+        "paymentStatus": "Pending"
+      },
+      "familyMembers": [
+        {
+          "id": "FM-53-1",
+          "fullName": "Youssef Sherif",
+          "relationship": "Spouse",
+          "gender": "Female",
+          "dateOfBirth": "2001-04-09T00:40:51.608Z",
+          "isCovered": true
+        }
+      ]
+    },
+    {
+      "id": "BEN-054",
+      "fullName": "Tamer Emad",
+      "email": "tamer.emad.54@example.com",
+      "nationality": "Syrian",
+      "policyNumber": "POL-2026-1054",
+      "company": "FinServe Egypt",
+      "plan": "Silver",
+      "coverageStatus": "Suspended",
+      "startDate": "2025-11-17T10:19:52.925Z",
+      "endDate": "2026-09-13T09:32:40.522Z",
+      "payment": {
+        "monthlyPremium": 1200,
+        "outstandingAmount": 3600,
+        "lastPaymentDate": "2026-03-16T01:52:15.401Z",
+        "paymentStatus": "Overdue"
+      },
+      "familyMembers": []
+    },
+    {
+      "id": "BEN-055",
+      "fullName": "Omar Samy",
+      "email": "omar.samy.55@example.com",
+      "nationality": "Syrian",
+      "policyNumber": "POL-2026-1055",
+      "company": "MedCare Solutions",
+      "plan": "Gold",
+      "coverageStatus": "Active",
+      "startDate": "2025-06-24T18:35:48.985Z",
+      "endDate": "2026-08-03T01:19:44.886Z",
+      "payment": {
+        "monthlyPremium": 1800,
+        "outstandingAmount": 3600,
+        "lastPaymentDate": "2026-04-03T14:21:36.887Z",
+        "paymentStatus": "Overdue"
+      },
+      "familyMembers": [
+        {
+          "id": "FM-55-1",
+          "fullName": "Mariam Tarek",
+          "relationship": "Spouse",
+          "gender": "Female",
+          "dateOfBirth": "2021-05-19T03:26:40.210Z",
+          "isCovered": false
+        },
+        {
+          "id": "FM-55-2",
+          "fullName": "Sara Nabil",
+          "relationship": "Spouse",
+          "gender": "Male",
+          "dateOfBirth": "1990-04-20T12:45:20.523Z",
+          "isCovered": true
+        }
+      ]
+    },
+    {
+      "id": "BEN-056",
+      "fullName": "Nour Wael",
+      "email": "nour.wael.56@example.com",
+      "nationality": "Egyptian",
+      "policyNumber": "POL-2026-1056",
+      "company": "AXA Group",
+      "plan": "Silver",
+      "coverageStatus": "Suspended",
+      "startDate": "2025-02-20T14:11:14.450Z",
+      "endDate": "2026-02-19T01:38:30.917Z",
+      "payment": {
+        "monthlyPremium": 1200,
+        "outstandingAmount": 2400,
+        "lastPaymentDate": "2026-03-01T11:53:27.497Z",
+        "paymentStatus": "Overdue"
+      },
+      "familyMembers": [
+        {
+          "id": "FM-56-1",
+          "fullName": "Tamer Samy",
+          "relationship": "Son",
+          "gender": "Male",
+          "dateOfBirth": "1985-04-01T06:03:42.074Z",
+          "isCovered": true
+        },
+        {
+          "id": "FM-56-2",
+          "fullName": "Mostafa Fathy",
+          "relationship": "Daughter",
+          "gender": "Female",
+          "dateOfBirth": "1989-04-01T06:00:49.828Z",
+          "isCovered": true
+        }
+      ]
+    },
+    {
+      "id": "BEN-057",
+      "fullName": "Salma Sherif",
+      "email": "salma.sherif.57@example.com",
+      "nationality": "Egyptian",
+      "policyNumber": "POL-2026-1057",
+      "company": "AXA Group",
+      "plan": "Platinum",
+      "coverageStatus": "Expired",
+      "startDate": "2025-08-09T06:27:52.235Z",
+      "endDate": "2026-01-25T23:03:31.238Z",
+      "payment": {
+        "monthlyPremium": 2800,
+        "outstandingAmount": 0,
+        "lastPaymentDate": "2026-01-24T01:12:17.464Z",
+        "paymentStatus": "Paid"
+      },
+      "familyMembers": []
+    },
+    {
+      "id": "BEN-058",
+      "fullName": "Omar Hassan",
+      "email": "omar.hassan.58@example.com",
+      "nationality": "Saudi",
+      "policyNumber": "POL-2026-1058",
+      "company": "AXA Group",
+      "plan": "Silver",
+      "coverageStatus": "Active",
+      "startDate": "2025-10-17T17:21:41.165Z",
+      "endDate": "2026-03-02T20:55:00.284Z",
+      "payment": {
+        "monthlyPremium": 1200,
+        "outstandingAmount": 2400,
+        "lastPaymentDate": "2026-03-21T11:42:26.344Z",
+        "paymentStatus": "Pending"
+      },
+      "familyMembers": []
+    },
+    {
+      "id": "BEN-059",
+      "fullName": "Karim Khaled",
+      "email": "karim.khaled.59@example.com",
+      "nationality": "Egyptian",
+      "policyNumber": "POL-2026-1059",
+      "company": "FinServe Egypt",
+      "plan": "Platinum",
+      "coverageStatus": "Expired",
+      "startDate": "2025-01-12T03:40:16.738Z",
+      "endDate": "2026-05-30T04:02:08.381Z",
+      "payment": {
+        "monthlyPremium": 2800,
+        "outstandingAmount": 2800,
+        "lastPaymentDate": "2026-03-18T11:58:16.944Z",
+        "paymentStatus": "Pending"
+      },
+      "familyMembers": []
+    },
+    {
+      "id": "BEN-060",
+      "fullName": "Salma Ali",
+      "email": "salma.ali.60@example.com",
+      "nationality": "Egyptian",
+      "policyNumber": "POL-2026-1060",
+      "company": "AXA Group",
+      "plan": "Gold",
+      "coverageStatus": "Active",
+      "startDate": "2025-10-04T21:03:04.110Z",
+      "endDate": "2026-11-12T23:27:44.754Z",
+      "payment": {
+        "monthlyPremium": 1800,
+        "outstandingAmount": 5400,
+        "lastPaymentDate": "2026-01-26T14:07:26.748Z",
+        "paymentStatus": "Overdue"
+      },
+      "familyMembers": [
+        {
+          "id": "FM-60-1",
+          "fullName": "Sara Adel",
+          "relationship": "Son",
+          "gender": "Male",
+          "dateOfBirth": "2009-01-08T20:48:33.967Z",
+          "isCovered": true
+        },
+        {
+          "id": "FM-60-2",
+          "fullName": "Salma Emad",
+          "relationship": "Daughter",
+          "gender": "Male",
+          "dateOfBirth": "1998-10-05T16:19:57.769Z",
+          "isCovered": true
+        }
+      ]
+    },
+    {
+      "id": "BEN-061",
+      "fullName": "Tamer Emad",
+      "email": "tamer.emad.61@example.com",
+      "nationality": "Syrian",
+      "policyNumber": "POL-2026-1061",
+      "company": "MedCare Solutions",
+      "plan": "Gold",
+      "coverageStatus": "Suspended",
+      "startDate": "2025-10-14T23:02:47.767Z",
+      "endDate": "2026-11-02T13:32:11.843Z",
+      "payment": {
+        "monthlyPremium": 1800,
+        "outstandingAmount": 1800,
+        "lastPaymentDate": "2026-04-23T12:36:19.707Z",
+        "paymentStatus": "Pending"
+      },
+      "familyMembers": [
+        {
+          "id": "FM-61-1",
+          "fullName": "Amr Tarek",
+          "relationship": "Spouse",
+          "gender": "Female",
+          "dateOfBirth": "1980-12-12T16:42:50.616Z",
+          "isCovered": true
+        }
+      ]
+    },
+    {
+      "id": "BEN-062",
+      "fullName": "Youssef Ali",
+      "email": "youssef.ali.62@example.com",
+      "nationality": "Saudi",
+      "policyNumber": "POL-2026-1062",
+      "company": "Nile Tech",
+      "plan": "Silver",
+      "coverageStatus": "Active",
+      "startDate": "2025-05-27T06:13:35.179Z",
+      "endDate": "2026-04-01T16:05:51.466Z",
+      "payment": {
+        "monthlyPremium": 1200,
+        "outstandingAmount": 0,
+        "lastPaymentDate": "2026-03-11T15:38:25.326Z",
+        "paymentStatus": "Paid"
+      },
+      "familyMembers": [
+        {
+          "id": "FM-62-1",
+          "fullName": "Karim Mahmoud",
+          "relationship": "Spouse",
+          "gender": "Male",
+          "dateOfBirth": "2004-05-09T18:24:06.323Z",
+          "isCovered": false
+        },
+        {
+          "id": "FM-62-2",
+          "fullName": "Karim Khaled",
+          "relationship": "Daughter",
+          "gender": "Male",
+          "dateOfBirth": "1981-01-03T11:08:46.004Z",
+          "isCovered": true
+        }
+      ]
+    },
+    {
+      "id": "BEN-063",
+      "fullName": "Salma Tarek",
+      "email": "salma.tarek.63@example.com",
+      "nationality": "Egyptian",
+      "policyNumber": "POL-2026-1063",
+      "company": "Delta Finance",
+      "plan": "Silver",
+      "coverageStatus": "Suspended",
+      "startDate": "2025-08-31T03:03:09.194Z",
+      "endDate": "2026-05-14T14:16:27.001Z",
+      "payment": {
+        "monthlyPremium": 1200,
+        "outstandingAmount": 0,
+        "lastPaymentDate": "2026-01-11T03:16:32.892Z",
+        "paymentStatus": "Paid"
+      },
+      "familyMembers": []
+    },
+    {
+      "id": "BEN-064",
+      "fullName": "Mohamed Khaled",
+      "email": "mohamed.khaled.64@example.com",
+      "nationality": "Saudi",
+      "policyNumber": "POL-2026-1064",
+      "company": "MedCare Solutions",
+      "plan": "Platinum",
+      "coverageStatus": "Active",
+      "startDate": "2025-06-15T06:10:57.651Z",
+      "endDate": "2026-07-29T14:41:46.281Z",
+      "payment": {
+        "monthlyPremium": 2800,
+        "outstandingAmount": 5600,
+        "lastPaymentDate": "2026-02-07T06:34:12.667Z",
+        "paymentStatus": "Pending"
+      },
+      "familyMembers": [
+        {
+          "id": "FM-64-1",
+          "fullName": "Laila Fathy",
+          "relationship": "Daughter",
+          "gender": "Female",
+          "dateOfBirth": "1996-08-04T23:22:56.702Z",
+          "isCovered": true
+        }
+      ]
+    },
+    {
+      "id": "BEN-065",
+      "fullName": "Mariam Hassan",
+      "email": "mariam.hassan.65@example.com",
+      "nationality": "Egyptian",
+      "policyNumber": "POL-2026-1065",
+      "company": "Delta Finance",
+      "plan": "Silver",
+      "coverageStatus": "Expired",
+      "startDate": "2025-06-26T01:27:26.167Z",
+      "endDate": "2026-12-29T18:43:20.428Z",
+      "payment": {
+        "monthlyPremium": 1200,
+        "outstandingAmount": 1200,
+        "lastPaymentDate": "2026-01-09T05:05:07.082Z",
+        "paymentStatus": "Overdue"
+      },
+      "familyMembers": [
+        {
+          "id": "FM-65-1",
+          "fullName": "Youssef Mahmoud",
+          "relationship": "Son",
+          "gender": "Male",
+          "dateOfBirth": "2015-06-05T03:05:52.670Z",
+          "isCovered": true
+        }
+      ]
+    },
+    {
+      "id": "BEN-066",
+      "fullName": "Youssef Samy",
+      "email": "youssef.samy.66@example.com",
+      "nationality": "Egyptian",
+      "policyNumber": "POL-2026-1066",
+      "company": "MedCare Solutions",
+      "plan": "Platinum",
+      "coverageStatus": "Active",
+      "startDate": "2025-04-19T04:59:25.668Z",
+      "endDate": "2026-09-14T16:31:56.023Z",
+      "payment": {
+        "monthlyPremium": 2800,
+        "outstandingAmount": 8400,
+        "lastPaymentDate": "2026-01-16T06:27:50.064Z",
+        "paymentStatus": "Overdue"
+      },
+      "familyMembers": [
+        {
+          "id": "FM-66-1",
+          "fullName": "Ahmed Ali",
+          "relationship": "Spouse",
+          "gender": "Female",
+          "dateOfBirth": "1990-03-15T21:05:08.063Z",
+          "isCovered": false
+        },
+        {
+          "id": "FM-66-2",
+          "fullName": "Sara Hassan",
+          "relationship": "Spouse",
+          "gender": "Male",
+          "dateOfBirth": "1995-01-27T02:53:02.330Z",
+          "isCovered": true
+        }
+      ]
+    },
+    {
+      "id": "BEN-067",
+      "fullName": "Mohamed Emad",
+      "email": "mohamed.emad.67@example.com",
+      "nationality": "Egyptian",
+      "policyNumber": "POL-2026-1067",
+      "company": "MedCare Solutions",
+      "plan": "Platinum",
+      "coverageStatus": "Suspended",
+      "startDate": "2025-08-25T00:51:55.850Z",
+      "endDate": "2026-07-24T21:29:46.398Z",
+      "payment": {
+        "monthlyPremium": 2800,
+        "outstandingAmount": 2800,
+        "lastPaymentDate": "2026-02-18T08:23:23.628Z",
+        "paymentStatus": "Pending"
+      },
+      "familyMembers": [
+        {
+          "id": "FM-67-1",
+          "fullName": "Youssef Wael",
+          "relationship": "Spouse",
+          "gender": "Female",
+          "dateOfBirth": "2002-01-11T14:32:29.068Z",
+          "isCovered": true
+        },
+        {
+          "id": "FM-67-2",
+          "fullName": "Mostafa Adel",
+          "relationship": "Spouse",
+          "gender": "Male",
+          "dateOfBirth": "1989-12-08T22:55:25.793Z",
+          "isCovered": true
+        }
+      ]
+    },
+    {
+      "id": "BEN-068",
+      "fullName": "Salma Mahmoud",
+      "email": "salma.mahmoud.68@example.com",
+      "nationality": "Saudi",
+      "policyNumber": "POL-2026-1068",
+      "company": "MedCare Solutions",
+      "plan": "Platinum",
+      "coverageStatus": "Active",
+      "startDate": "2025-07-11T20:30:27.402Z",
+      "endDate": "2026-01-22T05:30:15.155Z",
+      "payment": {
+        "monthlyPremium": 2800,
+        "outstandingAmount": 8400,
+        "lastPaymentDate": "2026-01-23T01:40:08.613Z",
+        "paymentStatus": "Pending"
+      },
+      "familyMembers": [
+        {
+          "id": "FM-68-1",
+          "fullName": "Youssef Hassan",
+          "relationship": "Son",
+          "gender": "Male",
+          "dateOfBirth": "2014-07-24T00:33:04.016Z",
+          "isCovered": false
+        },
+        {
+          "id": "FM-68-2",
+          "fullName": "Omar Nabil",
+          "relationship": "Daughter",
+          "gender": "Male",
+          "dateOfBirth": "2019-10-27T03:55:30.917Z",
+          "isCovered": true
+        }
+      ]
+    },
+    {
+      "id": "BEN-069",
+      "fullName": "Ahmed Adel",
+      "email": "ahmed.adel.69@example.com",
+      "nationality": "Saudi",
+      "policyNumber": "POL-2026-1069",
+      "company": "AXA Group",
+      "plan": "Gold",
+      "coverageStatus": "Suspended",
+      "startDate": "2025-09-15T16:31:56.287Z",
+      "endDate": "2026-03-03T04:05:30.433Z",
+      "payment": {
+        "monthlyPremium": 1800,
+        "outstandingAmount": 3600,
+        "lastPaymentDate": "2026-01-01T01:01:35.540Z",
+        "paymentStatus": "Pending"
+      },
+      "familyMembers": [
+        {
+          "id": "FM-69-1",
+          "fullName": "Ahmed Hassan",
+          "relationship": "Daughter",
+          "gender": "Male",
+          "dateOfBirth": "1970-03-08T16:46:59.993Z",
+          "isCovered": true
+        }
+      ]
+    },
+    {
+      "id": "BEN-070",
+      "fullName": "Sara Wael",
+      "email": "sara.wael.70@example.com",
+      "nationality": "Syrian",
+      "policyNumber": "POL-2026-1070",
+      "company": "AXA Group",
+      "plan": "Silver",
+      "coverageStatus": "Suspended",
+      "startDate": "2025-07-11T14:43:09.069Z",
+      "endDate": "2026-03-07T00:53:57.793Z",
+      "payment": {
+        "monthlyPremium": 1200,
+        "outstandingAmount": 1200,
+        "lastPaymentDate": "2026-02-03T18:47:03.878Z",
+        "paymentStatus": "Overdue"
+      },
+      "familyMembers": []
+    }
+  ]
+}
