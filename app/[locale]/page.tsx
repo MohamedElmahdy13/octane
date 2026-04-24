@@ -26,8 +26,8 @@ export default async function HomePage({
             <CardDescription>{t('selectionDescription')}</CardDescription>
           </CardHeader>
           <CardContent>
-            <Link href="/users-selection" locale={locale}>
-              <Button>{t('open')}</Button>
+            <Link href="/beneficiaries" locale={locale}>
+              <Button variant={"primary"}>{t('open')}</Button>
             </Link>
           </CardContent>
         </Card>
@@ -38,8 +38,8 @@ export default async function HomePage({
             <CardDescription>{t('expandableDescription')}</CardDescription>
           </CardHeader>
           <CardContent>
-            <Link href="/users-expandable" locale={locale}>
-              <Button>{t('open')}</Button>
+            <Link href="/beneficiaries-family" locale={locale}>
+              <Button variant={"primary"}>{t('open')}</Button>
             </Link>
           </CardContent>
         </Card>

@@ -1,27 +1,31 @@
 'use client'
 
-import {Link, usePathname} from '@/i18n/navigation'
-import {routing, type AppLocale} from '@/i18n/routing'
+import { Link, usePathname } from '@/i18n/navigation'
+import { routing, type AppLocale } from '@/i18n/routing'
 
-export function LanguageSwitcher({locale}: {locale: AppLocale}) {
+export function LanguageSwitcher({ locale }: { locale: AppLocale }) {
   const pathname = usePathname()
 
   return (
-    <div className="flex items-center gap-2 rounded-lg border px-2 py-1 text-sm">
-      {routing.locales.map((item) => (
-        <Link
-          key={item}
-          href={pathname}
-          locale={item}
-          className={
-            item === locale
-              ? 'rounded-md bg-primary px-2 py-1 text-primary-foreground'
-              : 'rounded-md px-2 py-1 hover:bg-muted'
-          }
-        >
-          {item.toUpperCase()}
-        </Link>
-      ))}
+    <div className="flex items-center gap-1 rounded-xl border bg-muted/40 p-1 text-sm shadow-sm">
+      {routing.locales.map((item) => {
+        const isActive = item === locale
+
+        return (
+          <Link
+            key={item}
+            href={pathname}
+            locale={item}
+            className={`rounded-lg px-3 py-1.5 font-medium transition-all duration-200 ${
+              isActive
+                ? 'bg-primary text-primary-foreground shadow-sm'
+                : 'text-muted-foreground hover:bg-background hover:text-primary'
+            }`}
+          >
+            {item.toUpperCase()}
+          </Link>
+        )
+      })}
     </div>
   )
 }
