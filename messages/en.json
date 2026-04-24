@@ -1,16 +1,14 @@
 {
   "app": {
-    "title": "Reusable Generic Table Demo"
+    "title": "Octane"
   },
   "nav": {
     "home": "Home",
-    "selection": "Selection Table",
-    "expandable": "Expandable Table",
     "beneficiariesFamily": "Beneficiaries Family",
     "beneficiaries": "Beneficiaries"
   },
   "home": {
-    "title": "Reusable Generic Table Demo",
+    "title": "Octane",
     "description": "Two demos built on one shared generic table component.",
     "selectionTitle": "Table with Row Selection",
     "selectionDescription": "Search, filters, pagination, row actions, and row selection.",

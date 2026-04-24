@@ -26,7 +26,7 @@ export function DataTableBody<TData extends { id: number | string }>({
   const visibleColumnCount = table.getVisibleLeafColumns().length
 
   return (
-    <div className="overflow-hidden rounded-lg border">
+    <div className="overflow-x-auto">
       <Table>
         <TableHeader>
           {table.getHeaderGroups().map((headerGroup) => (
