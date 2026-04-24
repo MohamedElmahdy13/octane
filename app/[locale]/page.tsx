@@ -27,7 +27,7 @@ export default async function HomePage({
           </CardHeader>
           <CardContent>
             <Link href="/beneficiaries" locale={locale}>
-              <Button>{t('open')}</Button>
+              <Button variant={"primary"}>{t('open')}</Button>
             </Link>
           </CardContent>
         </Card>
@@ -39,7 +39,7 @@ export default async function HomePage({
           </CardHeader>
           <CardContent>
             <Link href="/beneficiaries-family" locale={locale}>
-              <Button>{t('open')}</Button>
+              <Button variant={"primary"}>{t('open')}</Button>
             </Link>
           </CardContent>
         </Card>

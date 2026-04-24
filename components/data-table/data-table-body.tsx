@@ -8,6 +8,7 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table'
+import { DataTableSkeleton } from './data-table-skeleton'
 interface DataTableBodyProps<TData extends { id: number | string }> {
   table: TanstackTable<TData>
   loading: boolean
@@ -26,7 +27,7 @@ export function DataTableBody<TData extends { id: number | string }>({
   const visibleColumnCount = table.getVisibleLeafColumns().length
 
   return (
-    <div className="overflow-x-auto">
+    <div className="overflow-hidden rounded-xl border bg-card shadow-sm">
       <Table>
         <TableHeader>
           {table.getHeaderGroups().map((headerGroup) => (
@@ -44,9 +45,7 @@ export function DataTableBody<TData extends { id: number | string }>({
 
         <TableBody>
           {loading ? (
-            <TableRow>
-              <TableCell colSpan={visibleColumnCount}>{t('loading')}</TableCell>
-            </TableRow>
+            <DataTableSkeleton columns={visibleColumnCount} rows={8} />
           ) : table.getRowModel().rows.length === 0 ? (
             <TableRow>
               <TableCell colSpan={visibleColumnCount}>{t('empty')}</TableCell>

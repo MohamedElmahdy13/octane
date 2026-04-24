@@ -22,7 +22,7 @@ export function DataTablePagination({
 
       <div className="flex items-center gap-2">
         <Button
-          variant="outline"
+          variant="primary"
           onClick={() =>
             onPaginationChange({
               ...pagination,
@@ -35,7 +35,7 @@ export function DataTablePagination({
         </Button>
 
         <Button
-          variant="outline"
+          variant="primary"
           onClick={() =>
             onPaginationChange({
               ...pagination,
