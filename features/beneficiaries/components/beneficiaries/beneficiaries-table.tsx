@@ -5,7 +5,8 @@ import { Ban, Edit, Eye } from "lucide-react"
 import { useTranslations } from "next-intl"
 import { DataTable } from "@/components/data-table/data-table"
 import { getBeneficiaryColumns } from "@/features/beneficiaries/lib/get-beneficiary-columns"
-import { useBeneficiariesTable } from "@/features/beneficiaries/hooks/use-beneficiaries-table"
+// import { useBeneficiariesTable } from "@/features/beneficiaries/hooks/use-beneficiaries-table"
+import { useBeneficiariesQueryTable as useBeneficiariesTable } from '@/features/beneficiaries/hooks/use-beneficiaries-query-table'
 import { BeneficiariesSummaryCards } from "@/features/beneficiaries/components/beneficiaries-summary-cards"
 import { DataTableError } from "@/components/data-table/data-table-error"
 

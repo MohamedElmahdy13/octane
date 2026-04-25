@@ -10,6 +10,7 @@ import type { AppLocale } from "@/i18n/routing"
 import { Button } from "@/components/ui/button"
 import { LanguageSwitcher } from "./language-switcher"
 import { AnimatedLink } from "@/components/ui/animated-link"
+import { ThemeToggle } from "@/components/layout/theme-toggle"
 
 interface AppHeaderProps {
   locale: AppLocale
@@ -71,8 +72,12 @@ export function AppHeader({ locale }: AppHeaderProps) {
         </nav>
 
         <div className="flex items-center gap-2">
-          <div className="origin-right scale-90 md:scale-100">
+          {/*<div className="origin-right scale-90 md:scale-100">*/}
+          {/*  <LanguageSwitcher locale={locale} />*/}
+          {/*</div>*/}
+          <div className="flex items-center gap-2">
             <LanguageSwitcher locale={locale} />
+            <ThemeToggle />
           </div>
 
           <Button
