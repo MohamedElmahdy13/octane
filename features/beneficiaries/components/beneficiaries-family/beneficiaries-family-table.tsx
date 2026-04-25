@@ -8,6 +8,7 @@ import { getBeneficiaryColumns } from "../../lib/get-beneficiary-columns";
 import { BeneficiaryFamilyRow } from "./beneficiary-family-row";
 import { useBeneficiariesTable } from "../../hooks/use-beneficiaries-table";
 import { BeneficiariesSummaryCards } from "@/features/beneficiaries/components/beneficiaries-summary-cards"
+import { DataTableError } from "@/components/data-table/data-table-error"
 
 export function BeneficiariesFamilyTable() {
   const t = useTranslations("table");
@@ -15,6 +16,8 @@ export function BeneficiariesFamilyTable() {
     setQuery,
     data,
     loading,
+    error,
+    retry,
     nationalityOptions,
     planOptions,
     coverageOptions,
@@ -29,7 +32,7 @@ export function BeneficiariesFamilyTable() {
   return (
     <>
       <BeneficiariesSummaryCards beneficiaries={data?.data ?? []} />
-      <DataTable
+      {error ? <DataTableError onRetry={retry} isRetrying={loading} message={error}/>:      <DataTable
         data={data?.data ?? []}
         columns={columns}
         loading={loading}
@@ -132,7 +135,7 @@ export function BeneficiariesFamilyTable() {
             onClick: (row) => alert(`Suspend beneficiary ${row.fullName}`),
           },
         ]}
-      />
+      />}
     </>
 
   );

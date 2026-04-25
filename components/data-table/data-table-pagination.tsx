@@ -1,5 +1,5 @@
-import type { OnChangeFn, PaginationState } from '@tanstack/react-table'
-import { Button } from '@/components/ui/button'
+import type { OnChangeFn, PaginationState } from "@tanstack/react-table"
+import { Button } from "@/components/ui/button"
 
 interface DataTablePaginationProps {
   pagination: PaginationState
@@ -9,15 +9,16 @@ interface DataTablePaginationProps {
 }
 
 export function DataTablePagination({
-                                      pagination,
-                                      pageCount,
-                                      onPaginationChange,
-                                      t,
-                                    }: DataTablePaginationProps) {
+  pagination,
+  pageCount,
+  onPaginationChange,
+  t,
+}: DataTablePaginationProps) {
   return (
     <div className="flex items-center justify-between gap-4">
       <p className="text-sm text-muted-foreground">
-        {t('page')} {pagination.pageIndex + 1} {t('of')} {Math.max(1, pageCount)}
+        {t("page")} {pagination.pageIndex + 1} {t("of")}{" "}
+        {Math.max(1, pageCount)}
       </p>
 
       <div className="flex items-center gap-2">
@@ -31,7 +32,7 @@ export function DataTablePagination({
           }
           disabled={pagination.pageIndex <= 0}
         >
-          {t('previous')}
+          {t("previous")}
         </Button>
 
         <Button
@@ -44,7 +45,7 @@ export function DataTablePagination({
           }
           disabled={pagination.pageIndex + 1 >= Math.max(1, pageCount)}
         >
-          {t('next')}
+          {t("next")}
         </Button>
       </div>
     </div>

@@ -1,5 +1,5 @@
-import { TableCell, TableRow } from '@/components/ui/table'
-import { Skeleton } from '@/components/ui/skeleton'
+import { Skeleton } from "@/components/ui/skeleton"
+import { TableCell, TableRow } from "@/components/ui/table"
 
 interface DataTableSkeletonProps {
   rows?: number
@@ -7,18 +7,29 @@ interface DataTableSkeletonProps {
 }
 
 export function DataTableSkeleton({
-                                    rows = 8,
-                                    columns,
-                                  }: DataTableSkeletonProps) {
+  rows = 8,
+  columns,
+}: DataTableSkeletonProps) {
   return (
     <>
       {Array.from({ length: rows }).map((_, rowIndex) => (
         <TableRow key={rowIndex}>
-          {Array.from({ length: columns }).map((_, columnIndex) => (
-            <TableCell key={columnIndex}>
-              <Skeleton className="h-4 w-full max-w-35" />
-            </TableCell>
-          ))}
+          {Array.from({ length: columns }).map((_, columnIndex) => {
+            const isFirstColumn = columnIndex === 0
+            const isLastColumn = columnIndex === columns - 1
+
+            return (
+              <TableCell key={columnIndex}>
+                {isFirstColumn || isLastColumn ? (
+                  <Skeleton className="h-8 w-8 rounded-md" />
+                ) : columnIndex === 1 ? (
+                  <Skeleton className="h-4 w-full max-w-[120px]" />
+                ) : (
+                  <Skeleton className="h-4 w-full max-w-[90px]" />
+                )}
+              </TableCell>
+            )
+          })}
         </TableRow>
       ))}
     </>

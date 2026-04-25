@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/incompatible-library */
-'use client'
+"use client"
 
-import * as React from 'react'
+import * as React from "react"
 import {
   getCoreRowModel,
   useReactTable,
@@ -10,17 +10,17 @@ import {
   type OnChangeFn,
   type PaginationState,
   type RowSelectionState,
-} from '@tanstack/react-table'
-import { useTranslations } from 'next-intl'
-import { Card, CardContent } from '@/components/ui/card'
+} from "@tanstack/react-table"
+import { useTranslations } from "next-intl"
+import { Card, CardContent } from "@/components/ui/card"
 import {
   buildInternalColumns,
   type DataTableAction,
-} from './build-internal-columns'
-import { DataTableToolbar } from './data-table-toolbar'
-import { DataTableBody } from './data-table-body'
-import { DataTablePagination } from './data-table-pagination'
-import type { DataTableFilter } from './data-table-toolbar'
+} from "./build-internal-columns"
+import { DataTableToolbar } from "./data-table-toolbar"
+import { DataTableBody } from "./data-table-body"
+import { DataTablePagination } from "./data-table-pagination"
+import type { DataTableFilter } from "./data-table-toolbar"
 interface DataTableProps<TData extends { id: number | string }> {
   data: TData[]
   columns: ColumnDef<TData>[]
@@ -39,22 +39,22 @@ interface DataTableProps<TData extends { id: number | string }> {
 }
 
 export function DataTable<TData extends { id: number | string }>({
-                                                                   data,
-                                                                   columns,
-                                                                   loading,
-                                                                   search,
-                                                                   onSearchChange,
-                                                                   filters,
-                                                                   onResetFilters,
-                                                                   pagination,
-                                                                   pageCount,
-                                                                   onPaginationChange,
-                                                                   enableSelection = false,
-                                                                   enableExpandable = false,
-                                                                   renderExpandedRow,
-                                                                   actions = [],
-                                                                 }: DataTableProps<TData>) {
-  const t = useTranslations('table')
+  data,
+  columns,
+  loading,
+  search,
+  onSearchChange,
+  filters,
+  onResetFilters,
+  pagination,
+  pageCount,
+  onPaginationChange,
+  enableSelection = false,
+  enableExpandable = false,
+  renderExpandedRow,
+  actions = [],
+}: DataTableProps<TData>) {
+  const t = useTranslations("table")
   const [rowSelection, setRowSelection] = React.useState<RowSelectionState>({})
   const [expanded, setExpanded] = React.useState<ExpandedState>({})
 

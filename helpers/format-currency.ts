@@ -3,5 +3,5 @@ export function formatCurrency(value: number) {
     style: "currency",
     currency: "USD",
     maximumFractionDigits: 0,
-  }).format(value);
+  }).format(value)
 }

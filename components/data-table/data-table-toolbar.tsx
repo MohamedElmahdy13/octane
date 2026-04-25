@@ -20,12 +20,12 @@ interface DataTableToolbarProps {
 }
 
 export function DataTableToolbar({
-                                   search,
-                                   onSearchChange,
-                                   filters = [],
-                                   onResetFilters,
-                                   t,
-                                 }: DataTableToolbarProps) {
+  search,
+  onSearchChange,
+  filters = [],
+  onResetFilters,
+  t,
+}: DataTableToolbarProps) {
   return (
     <div className="w-full">
       <div className="flex w-full flex-wrap items-center gap-3">

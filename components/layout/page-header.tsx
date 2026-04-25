@@ -6,9 +6,11 @@ export function PageHeader({
   description?: string
 }) {
   return (
-    <div className="py-5 space-y-2">
+    <div className="space-y-2 py-5">
       <h1 className="text-3xl font-bold tracking-tight">{title}</h1>
-      {description ? <p className="text-muted-foreground">{description}</p> : null}
+      {description ? (
+        <p className="text-muted-foreground">{description}</p>
+      ) : null}
     </div>
   )
 }

@@ -1,10 +1,17 @@
-import { AlertCircle } from 'lucide-react'
-import { Button } from '@/components/ui/button'
+import { AlertCircle } from "lucide-react"
+import { Button } from "@/components/ui/button"
+
 interface DataTableErrorProps {
   message: string
   onRetry?: () => void
+  isRetrying?: boolean
 }
-export function DataTableError({ message, onRetry }: DataTableErrorProps) {
+
+export function DataTableError({
+  message,
+  onRetry,
+  isRetrying,
+}: DataTableErrorProps) {
   return (
     <div className="flex flex-col items-center justify-center gap-3 rounded-xl border border-destructive/30 bg-destructive/10 p-8 text-center">
       <div className="flex h-11 w-11 items-center justify-center rounded-full bg-destructive/10 text-destructive">
@@ -12,17 +19,13 @@ export function DataTableError({ message, onRetry }: DataTableErrorProps) {
       </div>
 
       <div>
-        <p className="font-semibold text-destructive">
-          Failed to load data
-        </p>
-        <p className="mt-1 text-sm text-muted-foreground">
-          {message}
-        </p>
+        <p className="font-semibold text-destructive">Something went wrong</p>
+        <p className="mt-1 text-sm text-muted-foreground">{message}</p>
       </div>
 
       {onRetry ? (
-        <Button variant="outline" onClick={onRetry}>
-          Try again
+        <Button variant="outline" onClick={onRetry} disabled={isRetrying}>
+          {isRetrying ? "Retrying..." : "Try again"}
         </Button>
       ) : null}
     </div>
