@@ -34,8 +34,8 @@ Built with a focus on usability, performance, and clear data presentation.
 ### 1. Clone the repo
 
 ```bash
-git clone <your-repo-link>
-cd <project-name>
+git clone <https://github.com/MohamedElmahdy13/octane.git>
+cd <octane>
 - Next.js App Router
 - TypeScript
 - Tailwind CSS
