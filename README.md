@@ -28,6 +28,14 @@ Built with a focus on usability, performance, and clear data presentation.
 - Supabase
 
 ---
+## 📊 Data Source
+
+The app uses Supabase as the primary data source.
+
+For backup and reproducibility, a mock JSON dataset is also included in:
+`mock/beneficiaries.json`
+
+This ensures the data can be restored or tested locally if needed.
 
 ## ⚙️ Getting Started
 
