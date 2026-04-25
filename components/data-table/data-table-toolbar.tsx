@@ -1,5 +1,6 @@
-import { Input } from '@/components/ui/input'
-import { Select } from '@/components/ui/select'
+import { Input } from "@/components/ui/input"
+import { Select } from "@/components/ui/select"
+import { Button } from "@/components/ui/button"
 
 export interface DataTableFilter {
   key: string
@@ -13,9 +14,8 @@ interface DataTableToolbarProps {
   search: string
   onSearchChange: (value: string) => void
   filters?: DataTableFilter[]
-  enableSelection: boolean
-  enableExpandable: boolean
   selectedCount: number
+  onResetFilters?: () => void
   t: (key: string) => string
 }
 
@@ -23,19 +23,17 @@ export function DataTableToolbar({
                                    search,
                                    onSearchChange,
                                    filters = [],
-                                   enableSelection,
-                                   enableExpandable,
-                                   selectedCount,
+                                   onResetFilters,
                                    t,
                                  }: DataTableToolbarProps) {
   return (
-    <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-      <div className="grid w-full gap-3 md:grid-cols-2 lg:grid-cols-[minmax(280px,1.4fr)_repeat(4,minmax(170px,1fr))]">
+    <div className="w-full">
+      <div className="flex w-full flex-wrap items-center gap-3">
         <Input
           value={search}
           onChange={(event) => onSearchChange(event.target.value)}
-          placeholder={t('searchPlaceholder')}
-          className="min-w-65"
+          placeholder={t("searchPlaceholder")}
+          className="h-10 min-w-[260px] flex-1"
         />
 
         {filters.map((filter) => (
@@ -43,8 +41,10 @@ export function DataTableToolbar({
             key={filter.key}
             value={filter.value}
             onChange={(event) => filter.onChange(event.target.value)}
+            className="h-10 min-w-[150px] flex-1 xl:flex-none"
           >
             <option value="">{filter.label}</option>
+
             {filter.options.map((option) => (
               <option key={option} value={option}>
                 {option}
@@ -52,17 +52,18 @@ export function DataTableToolbar({
             ))}
           </Select>
         ))}
-      </div>
 
-      {/*<div className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">*/}
-      {/*  {enableSelection ? <span>{t('selectionEnabled')}</span> : null}*/}
-      {/*  {enableExpandable ? <span>{t('expandableEnabled')}</span> : null}*/}
-      {/*  {enableSelection && selectedCount > 0 ? (*/}
-      {/*    <span>*/}
-      {/*      {selectedCount} {t('rowsSelected')}*/}
-      {/*    </span>*/}
-      {/*  ) : null}*/}
-      {/*</div>*/}
+        {onResetFilters ? (
+          <Button
+            type="button"
+            variant="outline"
+            onClick={onResetFilters}
+            className="h-10 min-w-[100px]"
+          >
+            Reset
+          </Button>
+        ) : null}
+      </div>
     </div>
   )
 }

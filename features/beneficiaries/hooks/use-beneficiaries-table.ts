@@ -5,6 +5,7 @@ import type {
   BeneficiariesQueryState,
   PaginatedBeneficiariesResponse,
 } from "../types/beneficiary.types";
+import { useDebouncedValue } from "@/hooks/useDebouncedValue"
 
 const initialState: BeneficiariesQueryState = {
   pageIndex: 0,
@@ -15,33 +16,33 @@ const initialState: BeneficiariesQueryState = {
   paymentStatus: "",
   company: "",
   nationality: "",
+  sortBy: '',
+  sortOrder: 'desc',
 };
 
 export function useBeneficiariesTable() {
   const [query, setQuery] =
     useState<BeneficiariesQueryState>(initialState);
-  const [debouncedSearch, setDebouncedSearch] = useState(query.search);
+  const debouncedSearch = useDebouncedValue(query.search)
   const [data, setData] = useState<PaginatedBeneficiariesResponse | null>(null);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
-    const timer = setTimeout(() => setDebouncedSearch(query.search), 350);
-    return () => clearTimeout(timer);
-  }, [query.search]);
-
-  useEffect(() => {
+    if (query.search !== debouncedSearch) {
+      return
+    }
     const controller = new AbortController();
 
     async function loadBeneficiaries() {
       try {
+        setError(null);
         setLoading(true);
-
         const params = new URLSearchParams({
           page: String(query.pageIndex + 1),
           pageSize: String(query.pageSize),
           search: debouncedSearch,
         });
-
         if (query.plan) params.set("plan", query.plan);
         if (query.coverageStatus) {
           params.set("coverageStatus", query.coverageStatus);
@@ -49,17 +50,37 @@ export function useBeneficiariesTable() {
         if (query.paymentStatus) {
           params.set("paymentStatus", query.paymentStatus);
         }
-        if (query.company) params.set("company", query.company);
-
+        if (query.company) {
+          params.set("company", query.company);
+        }
+        if (query.nationality) {
+          params.set("nationality", query.nationality);
+        }
+        if (query.sortBy) {
+          params.set('sortBy', query.sortBy)
+          params.set('sortOrder', query.sortOrder)
+        }
         const response = await fetch(`/api/beneficiaries?${params.toString()}`, {
           signal: controller.signal,
         });
 
+        if (!response.ok) {
+          const errorResult = await response.json().catch(() => null)
+          throw new Error(
+            errorResult?.message ?? 'Failed to load beneficiaries. Please try again.'
+          )
+        }
         const result: PaginatedBeneficiariesResponse = await response.json();
         setData(result);
       } catch (error) {
         if ((error as Error).name !== "AbortError") {
-          console.error(error);
+          if ((error as Error).name !== 'AbortError') {
+            setError(
+              error instanceof Error
+                ? error.message
+                : 'Something went wrong. Please try again.'
+            )
+          }
         }
       } finally {
         setLoading(false);
@@ -76,6 +97,9 @@ export function useBeneficiariesTable() {
     query.coverageStatus,
     query.paymentStatus,
     query.company,
+    query.nationality,
+    query.sortBy,
+    query.sortOrder,
     debouncedSearch,
   ]);
 
@@ -113,6 +137,7 @@ export function useBeneficiariesTable() {
     setQuery,
     data,
     loading,
+    error,
     planOptions,
     coverageOptions,
     nationalityOptions,

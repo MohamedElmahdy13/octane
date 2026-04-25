@@ -1,15 +1,15 @@
-import type { ColumnDef } from '@tanstack/react-table'
-import type { LucideIcon } from 'lucide-react'
-import { MoreVertical } from 'lucide-react'
-import { Plus, Minus } from 'lucide-react'
-import { Button } from '@/components/ui/button'
-import { Checkbox } from '@/components/ui/checkbox'
+import type { ColumnDef } from "@tanstack/react-table"
+import type { LucideIcon } from "lucide-react"
+import { MoreVertical } from "lucide-react"
+import { Plus, Minus } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { Checkbox } from "@/components/ui/checkbox"
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu'
+} from "@/components/ui/dropdown-menu"
 
 export interface DataTableAction<T> {
   label: string
@@ -36,7 +36,7 @@ export function buildInternalColumns<TData extends { id: number | string }>({
 
   if (enableSelection) {
     mappedColumns.unshift({
-      id: 'select',
+      id: "select",
       header: ({ table }) => (
         <Checkbox
           checked={table.getIsAllPageRowsSelected()}
@@ -56,8 +56,8 @@ export function buildInternalColumns<TData extends { id: number | string }>({
 
   if (enableExpandable) {
     mappedColumns.unshift({
-      id: 'expander',
-      header: '',
+      id: "expander",
+      header: "",
       cell: ({ row }) => (
         <div className="flex items-center justify-center">
           <Button
@@ -79,8 +79,8 @@ export function buildInternalColumns<TData extends { id: number | string }>({
 
   if (actions.length > 0) {
     mappedColumns.push({
-      id: 'rowActions',
-      header: t('actions'),
+      id: "rowActions",
+      header: t("actions"),
       cell: ({ row }) => (
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
