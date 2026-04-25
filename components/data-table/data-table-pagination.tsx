@@ -19,6 +19,7 @@ interface DataTablePaginationProps {
 }
 
 type PageItem = number | 'ellipsis'
+const PAGE_SIZE_OPTIONS = [10, 20, 50]
 
 function getPages(currentPage: number, pageCount: number): PageItem[] {
   if (pageCount <= 3) {
@@ -121,7 +122,7 @@ export function DataTablePagination({
             </SelectTrigger>
 
             <SelectContent className="p-1">
-              {[10, 20, 50].map((size) => (
+              {PAGE_SIZE_OPTIONS.map((size) => (
                 <SelectItem key={size} value={String(size)}>
                   {size}
                 </SelectItem>

@@ -1,33 +1,36 @@
-"use client"
+'use client'
 
-import { CreditCard, ShieldCheck, Users, AlertTriangle } from "lucide-react"
+import { AlertTriangle, CreditCard, ShieldCheck, Users } from 'lucide-react'
+import { useTranslations } from 'next-intl'
 
-import { Card, CardContent } from "@/components/ui/card"
-import type { Beneficiary } from "../types/beneficiary.types"
+import { Card, CardContent } from '@/components/ui/card'
+import type { Beneficiary } from '../types/beneficiary.types'
 
 interface BeneficiariesSummaryCardsProps {
   beneficiaries: Beneficiary[]
 }
 
 function formatCurrency(value: number) {
-  return new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD",
+  return new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
     maximumFractionDigits: 0,
   }).format(value)
 }
 
 export function BeneficiariesSummaryCards({
-  beneficiaries,
-}: BeneficiariesSummaryCardsProps) {
+                                            beneficiaries,
+                                          }: BeneficiariesSummaryCardsProps) {
+  const t = useTranslations('summary')
+
   const totalBeneficiaries = beneficiaries.length
 
   const activeCoverage = beneficiaries.filter(
-    (beneficiary) => beneficiary.coverageStatus === "Active"
+    (beneficiary) => beneficiary.coverageStatus === 'Active'
   ).length
 
   const overduePayments = beneficiaries.filter(
-    (beneficiary) => beneficiary.payment.paymentStatus === "Overdue"
+    (beneficiary) => beneficiary.payment.paymentStatus === 'Overdue'
   ).length
 
   const totalMonthlyPremium = beneficiaries.reduce(
@@ -37,28 +40,28 @@ export function BeneficiariesSummaryCards({
 
   const cards = [
     {
-      title: "Total Beneficiaries",
+      title: t('summaryTotalBeneficiaries'),
       value: totalBeneficiaries,
       icon: Users,
-      description: "Registered policy holders",
+      description: t('summaryTotalBeneficiariesDescription'),
     },
     {
-      title: "Active Coverage",
+      title: t('summaryActiveCoverage'),
       value: activeCoverage,
       icon: ShieldCheck,
-      description: "Currently active policies",
+      description: t('summaryActiveCoverageDescription'),
     },
     {
-      title: "Overdue Payments",
+      title: t('summaryOverduePayments'),
       value: overduePayments,
       icon: AlertTriangle,
-      description: "Require payment follow-up",
+      description: t('summaryOverduePaymentsDescription'),
     },
     {
-      title: "Monthly Premium",
+      title: t('summaryMonthlyPremium'),
       value: formatCurrency(totalMonthlyPremium),
       icon: CreditCard,
-      description: "Expected monthly revenue",
+      description: t('summaryMonthlyPremiumDescription'),
     },
   ]
 

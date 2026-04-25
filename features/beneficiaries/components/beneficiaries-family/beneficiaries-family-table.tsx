@@ -56,7 +56,7 @@ export function BeneficiariesFamilyTable() {
         filters={[
           {
             key: 'nationality',
-            label: 'All nationalities',
+            label: t('allNationalities'),
             value: query.nationality,
             options: nationalityOptions,
             onChange: (value) =>
@@ -64,7 +64,7 @@ export function BeneficiariesFamilyTable() {
           },
           {
             key: 'plan',
-            label: 'All plans',
+            label: t('allPlans'),
             value: query.plan,
             options: planOptions,
             onChange: (value) =>
@@ -72,7 +72,7 @@ export function BeneficiariesFamilyTable() {
           },
           {
             key: 'coverageStatus',
-            label: 'All coverage',
+            label: t('allCoverage'),
             value: query.coverageStatus,
             options: coverageOptions,
             onChange: (value) =>
@@ -80,7 +80,7 @@ export function BeneficiariesFamilyTable() {
           },
           {
             key: 'paymentStatus',
-            label: 'All payments',
+            label: t('allPayments'),
             value: query.paymentStatus,
             options: paymentOptions,
             onChange: (value) =>
@@ -131,17 +131,17 @@ export function BeneficiariesFamilyTable() {
         )}
         actions={[
           {
-            label: t('view'),
+            label: t("view"),
             icon: Eye,
             onClick: (row) => alert(`View beneficiary ${row.fullName}`),
           },
           {
-            label: 'Edit',
+            label: t("edit"),
             icon: Edit,
             onClick: (row) => alert(`Edit beneficiary ${row.fullName}`),
           },
           {
-            label: 'Suspend',
+            label: t("suspend"),
             icon: Ban,
             onClick: (row) => alert(`Suspend beneficiary ${row.fullName}`),
           },

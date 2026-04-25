@@ -35,7 +35,7 @@ export function DataTableToolbar({
           value={search}
           onChange={(event) => onSearchChange(event.target.value)}
           placeholder={t("searchPlaceholder")}
-          className="h-10 min-w-[260px] flex-1"
+          className="h-10 min-w-65 flex-1"
         />
 
         {filters.map((filter) => (
@@ -68,7 +68,7 @@ export function DataTableToolbar({
             disabled={!hasActiveFilters}
             className="h-10 min-w-25"
           >
-            Reset
+            {t('reset')}
           </Button>
         ) : null}
       </div>

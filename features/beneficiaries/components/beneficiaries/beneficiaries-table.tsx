@@ -59,7 +59,7 @@ export function BeneficiariesTable() {
           filters={[
             {
               key: "nationality",
-              label: "All nationalities",
+              label: t('allNationalities'),
               value: query.nationality,
               options: nationalityOptions,
               onChange: (value) =>
@@ -71,7 +71,7 @@ export function BeneficiariesTable() {
             },
             {
               key: "plan",
-              label: "All plans",
+              label: t('allPlans'),
               value: query.plan,
               options: planOptions,
               onChange: (value) =>
@@ -83,7 +83,7 @@ export function BeneficiariesTable() {
             },
             {
               key: "coverageStatus",
-              label: "All coverage",
+              label: t('allCoverage'),
               value: query.coverageStatus,
               options: coverageOptions,
               onChange: (value) =>
@@ -95,7 +95,7 @@ export function BeneficiariesTable() {
             },
             {
               key: "paymentStatus",
-              label: "All payments",
+              label: t('allPayments'),
               value: query.paymentStatus,
               options: paymentOptions,
               onChange: (value) =>
