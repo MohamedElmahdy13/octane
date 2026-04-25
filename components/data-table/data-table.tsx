@@ -28,6 +28,7 @@ interface DataTableProps<TData extends { id: number | string }> {
   search: string
   onSearchChange: (value: string) => void
   filters?: DataTableFilter[]
+  onResetFilters?: () => void
   pagination: PaginationState
   pageCount: number
   onPaginationChange: OnChangeFn<PaginationState>
@@ -44,6 +45,7 @@ export function DataTable<TData extends { id: number | string }>({
                                                                    search,
                                                                    onSearchChange,
                                                                    filters,
+                                                                   onResetFilters,
                                                                    pagination,
                                                                    pageCount,
                                                                    onPaginationChange,
@@ -96,12 +98,10 @@ export function DataTable<TData extends { id: number | string }>({
           search={search}
           onSearchChange={onSearchChange}
           filters={filters}
-          enableSelection={enableSelection}
-          enableExpandable={enableExpandable}
           selectedCount={selectedCount}
+          onResetFilters={onResetFilters}
           t={t}
         />
-
         <DataTableBody
           table={table}
           loading={loading}

@@ -21,7 +21,10 @@ export function BeneficiariesFamilyTable() {
     paymentOptions, } =
     useBeneficiariesTable();
 
-  const columns = useMemo(() => getBeneficiaryColumns(), []);
+  const columns = useMemo(
+    () => getBeneficiaryColumns(query, setQuery),
+    [query.sortBy, query.sortOrder, setQuery]
+  )
 
   return (
     <>
@@ -72,6 +75,20 @@ export function BeneficiariesFamilyTable() {
               setQuery((prev) => ({ ...prev, pageIndex: 0, paymentStatus: value })),
           },
         ]}
+        onResetFilters={() =>
+          setQuery((prev) => ({
+            ...prev,
+            pageIndex: 0,
+            search: '',
+            nationality: '',
+            plan: '',
+            coverageStatus: '',
+            paymentStatus: '',
+            company: '',
+            sortBy: '',
+            sortOrder: 'desc',
+          }))
+        }
         pagination={{
           pageIndex: query.pageIndex,
           pageSize: query.pageSize,

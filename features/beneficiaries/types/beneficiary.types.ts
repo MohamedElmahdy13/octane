@@ -69,4 +69,6 @@ export interface BeneficiariesQueryState {
   paymentStatus: string;
   company: string;
   nationality: string;
+  sortBy: '' | 'monthlyPremium' | 'lastPaymentDate'
+  sortOrder: 'asc' | 'desc'
 }
