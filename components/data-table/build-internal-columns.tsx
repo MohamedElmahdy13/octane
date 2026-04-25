@@ -40,15 +40,15 @@ export function buildInternalColumns<TData extends { id: number | string }>({
       header: ({ table }) => (
         <Checkbox
           checked={table.getIsAllPageRowsSelected()}
-          onChange={(event) =>
-            table.toggleAllPageRowsSelected(event.currentTarget.checked)
-          }
+          onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
+          aria-label="Select all"
         />
       ),
       cell: ({ row }) => (
         <Checkbox
           checked={row.getIsSelected()}
-          onChange={(event) => row.toggleSelected(event.currentTarget.checked)}
+          onCheckedChange={(value) => row.toggleSelected(!!value)}
+          aria-label="Select row"
         />
       ),
     })
