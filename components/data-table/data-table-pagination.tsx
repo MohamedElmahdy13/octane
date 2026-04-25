@@ -1,7 +1,7 @@
 import type { OnChangeFn, PaginationState } from '@tanstack/react-table'
 import { useTranslations } from "next-intl"
 import { Button } from '@/components/ui/button'
-import { Select } from '@/components/ui/select'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { PaginationEllipsis } from '@/components/ui/pagination'
 interface DataTablePaginationProps {
   pagination: PaginationState
@@ -134,14 +134,19 @@ export function DataTablePagination({
 
         <Select
           value={String(pageSize)}
-          onChange={(event) => changePageSize(event.target.value)}
-          className="h-8 w-20"
+          onValueChange={changePageSize}
         >
-          {[10, 20, 50].map((size) => (
-            <option key={size} value={size}>
-              {size}
-            </option>
-          ))}
+          <SelectTrigger className="h-8 w-20">
+            <SelectValue />
+          </SelectTrigger>
+
+          <SelectContent className='p-1'>
+            {[10, 20, 50].map((size) => (
+              <SelectItem key={size} value={String(size)}>
+                {size}
+              </SelectItem>
+            ))}
+          </SelectContent>
         </Select>
       </div>
     </div>
