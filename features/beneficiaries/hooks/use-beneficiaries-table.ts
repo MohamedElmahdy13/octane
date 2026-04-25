@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from "react"
 
 import { useDebouncedValue } from '@/hooks/useDebouncedValue'
 import {
@@ -17,7 +17,7 @@ import type {
   PaginatedBeneficiariesResponse,
 } from '../types/beneficiary.types'
 import { fetchBeneficiaries } from '../services/beneficiaries-client.service'
-import { buildBeneficiariesParams } from '../lib/build-beneficiaries-params'
+import { buildBeneficiariesParams, paramsBuilder } from "../lib/build-beneficiaries-params"
 
 const initialState: BeneficiariesQueryState = {
   pageIndex: 0,
@@ -40,7 +40,10 @@ export function useBeneficiariesTable() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [retryKey, setRetryKey] = useState(0)
-
+  const params = useMemo(
+    () => paramsBuilder(query, debouncedSearch),
+    [query, debouncedSearch]
+  )
   useEffect(() => {
     if (query.search !== debouncedSearch) return
 
@@ -51,7 +54,7 @@ export function useBeneficiariesTable() {
         setLoading(true)
         setError(null)
 
-        const params = buildBeneficiariesParams(query, debouncedSearch)
+
         const result = await fetchBeneficiaries(params, controller.signal)
 
         if (!controller.signal.aborted) {
