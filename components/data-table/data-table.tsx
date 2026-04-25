@@ -36,6 +36,8 @@ interface DataTableProps<TData extends { id: number | string }> {
   enableExpandable?: boolean
   renderExpandedRow?: (row: TData) => React.ReactNode
   actions?: DataTableAction<TData>[]
+  hasActiveFilters?: boolean
+  total: number
 }
 
 export function DataTable<TData extends { id: number | string }>({
@@ -46,8 +48,10 @@ export function DataTable<TData extends { id: number | string }>({
   onSearchChange,
   filters,
   onResetFilters,
+  hasActiveFilters=false,
   pagination,
   pageCount,
+  total ,
   onPaginationChange,
   enableSelection = false,
   enableExpandable = false,
@@ -100,6 +104,7 @@ export function DataTable<TData extends { id: number | string }>({
           filters={filters}
           selectedCount={selectedCount}
           onResetFilters={onResetFilters}
+          hasActiveFilters={hasActiveFilters}
           t={t}
         />
         <DataTableBody
@@ -114,7 +119,7 @@ export function DataTable<TData extends { id: number | string }>({
           pagination={pagination}
           pageCount={pageCount}
           onPaginationChange={onPaginationChange}
-          t={t}
+          total={total}
         />
       </CardContent>
     </Card>

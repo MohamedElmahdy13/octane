@@ -24,12 +24,20 @@ export function BeneficiariesTable() {
     coverageOptions,
     paymentOptions,
   } = useBeneficiariesTable()
+  const hasActiveFilters = Boolean(
+    query.search ||
+    query.nationality ||
+    query.plan ||
+    query.coverageStatus ||
+    query.paymentStatus ||
+    query.company ||
+    query.sortBy
+  )
 
   const columns = useMemo(
     () => getBeneficiaryColumns(query, setQuery),
     [query.sortBy, query.sortOrder, setQuery]
   )
-
   return (
     <>
       <BeneficiariesSummaryCards beneficiaries={data?.data ?? []} />
@@ -98,6 +106,7 @@ export function BeneficiariesTable() {
                 })),
             },
           ]}
+          hasActiveFilters={hasActiveFilters}
           onResetFilters={() =>
             setQuery((prev) => ({
               ...prev,
@@ -116,6 +125,7 @@ export function BeneficiariesTable() {
             pageIndex: query.pageIndex,
             pageSize: query.pageSize,
           }}
+          total={data?.total ?? 0}
           pageCount={data?.totalPages ?? 1}
           onPaginationChange={(updaterOrValue) => {
             setQuery((prev) => {

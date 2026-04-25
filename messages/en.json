@@ -49,6 +49,9 @@
     "expandableEnabled": "Expandable rows enabled",
     "view": "View",
     "edit": "Edit",
-    "suspend": "Suspend"
+    "suspend": "Suspend",
+
+    "rows": "Rows",
+    "showing": "Showing <span>{start}</span>-<span>{end}</span> of <span>{total}</span> users"
   }
 }

@@ -49,6 +49,9 @@
     "expandableEnabled": "تم تفعيل التوسيع",
     "view": "عرض",
     "edit": "تعديل",
-    "suspend": "إيقاف"
+    "suspend": "إيقاف",
+
+    "rows": "عدد الصفوف",
+    "showing": "عرض <span>{start}</span>-<span>{end}</span> من <span>{total}</span> مستخدم"
   }
 }

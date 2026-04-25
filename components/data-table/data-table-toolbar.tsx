@@ -17,6 +17,7 @@ interface DataTableToolbarProps {
   selectedCount: number
   onResetFilters?: () => void
   t: (key: string) => string
+  hasActiveFilters?: boolean
 }
 
 export function DataTableToolbar({
@@ -24,6 +25,7 @@ export function DataTableToolbar({
   onSearchChange,
   filters = [],
   onResetFilters,
+  hasActiveFilters,
   t,
 }: DataTableToolbarProps) {
   return (
@@ -58,7 +60,8 @@ export function DataTableToolbar({
             type="button"
             variant="outline"
             onClick={onResetFilters}
-            className="h-10 min-w-[100px]"
+            disabled={!hasActiveFilters}
+            className="h-10 min-w-25"
           >
             Reset
           </Button>

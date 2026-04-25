@@ -28,6 +28,15 @@ export function BeneficiariesFamilyTable() {
     () => getBeneficiaryColumns(query, setQuery),
     [query.sortBy, query.sortOrder, setQuery]
   )
+  const hasActiveFilters = Boolean(
+    query.search ||
+    query.nationality ||
+    query.plan ||
+    query.coverageStatus ||
+    query.paymentStatus ||
+    query.company ||
+    query.sortBy
+  )
 
   return (
     <>
@@ -78,6 +87,7 @@ export function BeneficiariesFamilyTable() {
               setQuery((prev) => ({ ...prev, pageIndex: 0, paymentStatus: value })),
           },
         ]}
+        hasActiveFilters={hasActiveFilters}
         onResetFilters={() =>
           setQuery((prev) => ({
             ...prev,
@@ -96,6 +106,7 @@ export function BeneficiariesFamilyTable() {
           pageIndex: query.pageIndex,
           pageSize: query.pageSize,
         }}
+        total={data?.total ?? 0}
         pageCount={data?.totalPages ?? 1}
         onPaginationChange={(updaterOrValue) => {
           setQuery((prev) => {
