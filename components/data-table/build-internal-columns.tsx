@@ -26,12 +26,12 @@ interface BuildInternalColumnsParams<TData extends { id: number | string }> {
 }
 
 export function buildInternalColumns<TData extends { id: number | string }>({
-                                                                              columns,
-                                                                              enableSelection,
-                                                                              enableExpandable,
-                                                                              actions,
-                                                                              t,
-                                                                            }: BuildInternalColumnsParams<TData>): ColumnDef<TData>[] {
+  columns,
+  enableSelection,
+  enableExpandable,
+  actions,
+  t,
+}: BuildInternalColumnsParams<TData>): ColumnDef<TData>[] {
   const mappedColumns = [...columns]
 
   if (enableSelection) {

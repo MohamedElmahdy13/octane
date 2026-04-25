@@ -1,10 +1,10 @@
-import type { Beneficiary } from '../types/beneficiary.types'
+import type { Beneficiary } from "../types/beneficiary.types"
 
 type SupabaseFamilyMember = {
   id: string
   full_name: string
-  relationship: Beneficiary['familyMembers'][number]['relationship']
-  gender: Beneficiary['familyMembers'][number]['gender']
+  relationship: Beneficiary["familyMembers"][number]["relationship"]
+  gender: Beneficiary["familyMembers"][number]["gender"]
   date_of_birth: string
   is_covered: boolean
 }
@@ -13,23 +13,21 @@ export type SupabaseBeneficiary = {
   id: string
   full_name: string
   email: string
-  nationality: Beneficiary['nationality']
+  nationality: Beneficiary["nationality"]
   policy_number: string
   company: string
-  plan: Beneficiary['plan']
-  coverage_status: Beneficiary['coverageStatus']
+  plan: Beneficiary["plan"]
+  coverage_status: Beneficiary["coverageStatus"]
   start_date: string
   end_date: string
   monthly_premium: number
   outstanding_amount: number
   last_payment_date: string
-  payment_status: Beneficiary['payment']['paymentStatus']
+  payment_status: Beneficiary["payment"]["paymentStatus"]
   family_members?: SupabaseFamilyMember[]
 }
 
-export function mapSupabaseBeneficiary(
-  row: SupabaseBeneficiary
-): Beneficiary {
+export function mapSupabaseBeneficiary(row: SupabaseBeneficiary): Beneficiary {
   return {
     id: row.id,
     fullName: row.full_name,

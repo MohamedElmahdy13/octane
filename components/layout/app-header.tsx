@@ -1,16 +1,15 @@
-'use client'
+"use client"
 
-import { useState } from 'react'
-import { Menu, X } from 'lucide-react'
-import { useTranslations } from 'next-intl'
-import { usePathname } from 'next/navigation'
+import { useState } from "react"
+import { Menu, X } from "lucide-react"
+import { useTranslations } from "next-intl"
+import { usePathname } from "next/navigation"
 
-import { Link } from '@/i18n/navigation'
-import type { AppLocale } from '@/i18n/routing'
-import { Button } from '@/components/ui/button'
-import { LanguageSwitcher } from './language-switcher'
+import { Link } from "@/i18n/navigation"
+import type { AppLocale } from "@/i18n/routing"
+import { Button } from "@/components/ui/button"
+import { LanguageSwitcher } from "./language-switcher"
 import { AnimatedLink } from "@/components/ui/animated-link"
-
 
 interface AppHeaderProps {
   locale: AppLocale
@@ -20,29 +19,29 @@ export function AppHeader({ locale }: AppHeaderProps) {
   const [isOpen, setIsOpen] = useState(false)
 
   const pathname = usePathname()
-  const normalizedPath = pathname.replace(`/${locale}`, '') || '/'
+  const normalizedPath = pathname.replace(`/${locale}`, "") || "/"
 
-  const tNav = useTranslations('nav')
-  const tApp = useTranslations('app')
+  const tNav = useTranslations("nav")
+  const tApp = useTranslations("app")
 
   const links = [
     {
-      href: '/',
-      label: tNav('home'),
+      href: "/",
+      label: tNav("home"),
     },
     {
-      href: '/beneficiaries',
-      label: tNav('beneficiaries'),
+      href: "/beneficiaries",
+      label: tNav("beneficiaries"),
     },
     {
-      href: '/beneficiaries-family',
-      label: tNav('beneficiariesFamily'),
+      href: "/beneficiaries-family",
+      label: tNav("beneficiariesFamily"),
     },
   ]
 
   const isActiveLink = (href: string) => {
-    if (href === '/') {
-      return normalizedPath === '/'
+    if (href === "/") {
+      return normalizedPath === "/"
     }
 
     return normalizedPath === href || normalizedPath.startsWith(`${href}/`)
@@ -56,7 +55,7 @@ export function AppHeader({ locale }: AppHeaderProps) {
           locale={locale}
           className="max-w-47.5 truncate text-base font-semibold tracking-tight sm:max-w-none"
         >
-          {tApp('title')}
+          {tApp("title")}
         </Link>
 
         <nav className="hidden items-center gap-6 text-sm md:flex">
@@ -95,8 +94,8 @@ export function AppHeader({ locale }: AppHeaderProps) {
       <div
         className={`overflow-hidden transition-all duration-300 ease-in-out md:hidden ${
           isOpen
-            ? 'max-h-105 translate-y-0 opacity-100'
-            : 'max-h-0 -translate-y-2 opacity-0'
+            ? "max-h-105 translate-y-0 opacity-100"
+            : "max-h-0 -translate-y-2 opacity-0"
         }`}
       >
         <div className="border-t bg-background">

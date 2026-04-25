@@ -1,33 +1,33 @@
-'use client'
+"use client"
 
-import { CreditCard, ShieldCheck, Users, AlertTriangle } from 'lucide-react'
+import { CreditCard, ShieldCheck, Users, AlertTriangle } from "lucide-react"
 
-import { Card, CardContent } from '@/components/ui/card'
-import type { Beneficiary } from '../types/beneficiary.types'
+import { Card, CardContent } from "@/components/ui/card"
+import type { Beneficiary } from "../types/beneficiary.types"
 
 interface BeneficiariesSummaryCardsProps {
   beneficiaries: Beneficiary[]
 }
 
 function formatCurrency(value: number) {
-  return new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: 'USD',
+  return new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
     maximumFractionDigits: 0,
   }).format(value)
 }
 
 export function BeneficiariesSummaryCards({
-                                            beneficiaries,
-                                          }: BeneficiariesSummaryCardsProps) {
+  beneficiaries,
+}: BeneficiariesSummaryCardsProps) {
   const totalBeneficiaries = beneficiaries.length
 
   const activeCoverage = beneficiaries.filter(
-    (beneficiary) => beneficiary.coverageStatus === 'Active'
+    (beneficiary) => beneficiary.coverageStatus === "Active"
   ).length
 
   const overduePayments = beneficiaries.filter(
-    (beneficiary) => beneficiary.payment.paymentStatus === 'Overdue'
+    (beneficiary) => beneficiary.payment.paymentStatus === "Overdue"
   ).length
 
   const totalMonthlyPremium = beneficiaries.reduce(
@@ -37,28 +37,28 @@ export function BeneficiariesSummaryCards({
 
   const cards = [
     {
-      title: 'Total Beneficiaries',
+      title: "Total Beneficiaries",
       value: totalBeneficiaries,
       icon: Users,
-      description: 'Registered policy holders',
+      description: "Registered policy holders",
     },
     {
-      title: 'Active Coverage',
+      title: "Active Coverage",
       value: activeCoverage,
       icon: ShieldCheck,
-      description: 'Currently active policies',
+      description: "Currently active policies",
     },
     {
-      title: 'Overdue Payments',
+      title: "Overdue Payments",
       value: overduePayments,
       icon: AlertTriangle,
-      description: 'Require payment follow-up',
+      description: "Require payment follow-up",
     },
     {
-      title: 'Monthly Premium',
+      title: "Monthly Premium",
       value: formatCurrency(totalMonthlyPremium),
       icon: CreditCard,
-      description: 'Expected monthly revenue',
+      description: "Expected monthly revenue",
     },
   ]
 

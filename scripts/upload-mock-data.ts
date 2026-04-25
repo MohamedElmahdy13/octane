@@ -1,20 +1,18 @@
-import dotenv from 'dotenv'
-import fs from 'fs'
-import { createClient } from '@supabase/supabase-js'
-dotenv.config({ path: '.env.local' })
+import dotenv from "dotenv"
+import fs from "fs"
+import { createClient } from "@supabase/supabase-js"
+dotenv.config({ path: ".env.local" })
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
 const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY
 
 if (!supabaseUrl || !serviceKey) {
-  throw new Error('Missing Supabase env variables')
+  throw new Error("Missing Supabase env variables")
 }
 
 const supabase = createClient(supabaseUrl, serviceKey)
 
-const json = JSON.parse(
-  fs.readFileSync('./mock/beneficiaries.json', 'utf-8')
-)
+const json = JSON.parse(fs.readFileSync("./mock/beneficiaries.json", "utf-8"))
 
 const beneficiariesSource = json.beneficiaries
 
@@ -48,27 +46,27 @@ async function seed() {
     }))
   )
 
-  await supabase.from('family_members').delete().neq('id', '')
-  await supabase.from('beneficiaries').delete().neq('id', '')
+  await supabase.from("family_members").delete().neq("id", "")
+  await supabase.from("beneficiaries").delete().neq("id", "")
 
   const { error: beneficiariesError } = await supabase
-    .from('beneficiaries')
+    .from("beneficiaries")
     .insert(beneficiaries)
 
   if (beneficiariesError) throw beneficiariesError
 
   const { error: familyError } = await supabase
-    .from('family_members')
+    .from("family_members")
     .insert(familyMembers)
 
   if (familyError) throw familyError
 
-  console.log('✅ Seed completed')
+  console.log("✅ Seed completed")
   console.log(`✅ Inserted ${beneficiaries.length} beneficiaries`)
   console.log(`✅ Inserted ${familyMembers.length} family members`)
 }
 
 seed().catch((error) => {
-  console.error('❌ Seed failed:', error)
+  console.error("❌ Seed failed:", error)
   process.exit(1)
 })
