@@ -5,9 +5,10 @@ import { Ban, Edit, Eye } from "lucide-react"
 import { useTranslations } from "next-intl"
 import { DataTable } from "@/components/data-table/data-table"
 import { getBeneficiaryColumns } from "@/features/beneficiaries/lib/get-beneficiary-columns"
-import { useBeneficiariesTable } from "@/features/beneficiaries/hooks/use-beneficiaries-table"
+// import { useBeneficiariesTable } from "@/features/beneficiaries/hooks/use-beneficiaries-table"
+import { useBeneficiariesQueryTable as useBeneficiariesTable } from '@/features/beneficiaries/hooks/use-beneficiaries-query-table'
 import { BeneficiariesSummaryCards } from "@/features/beneficiaries/components/beneficiaries-summary-cards"
-import { DataTableError } from "@/components/data-table/data-table-error"
+import { DataTableError } from "@/components/data-table/tests/data-table-error"
 
 export function BeneficiariesTable() {
   const t = useTranslations("table")
@@ -24,12 +25,20 @@ export function BeneficiariesTable() {
     coverageOptions,
     paymentOptions,
   } = useBeneficiariesTable()
+  const hasActiveFilters = Boolean(
+    query.search ||
+    query.nationality ||
+    query.plan ||
+    query.coverageStatus ||
+    query.paymentStatus ||
+    query.company ||
+    query.sortBy
+  )
 
   const columns = useMemo(
     () => getBeneficiaryColumns(query, setQuery),
     [query.sortBy, query.sortOrder, setQuery]
   )
-
   return (
     <>
       <BeneficiariesSummaryCards beneficiaries={data?.data ?? []} />
@@ -51,7 +60,7 @@ export function BeneficiariesTable() {
           filters={[
             {
               key: "nationality",
-              label: "All nationalities",
+              label: t('allNationalities'),
               value: query.nationality,
               options: nationalityOptions,
               onChange: (value) =>
@@ -63,7 +72,7 @@ export function BeneficiariesTable() {
             },
             {
               key: "plan",
-              label: "All plans",
+              label: t('allPlans'),
               value: query.plan,
               options: planOptions,
               onChange: (value) =>
@@ -75,7 +84,7 @@ export function BeneficiariesTable() {
             },
             {
               key: "coverageStatus",
-              label: "All coverage",
+              label: t('allCoverage'),
               value: query.coverageStatus,
               options: coverageOptions,
               onChange: (value) =>
@@ -87,7 +96,7 @@ export function BeneficiariesTable() {
             },
             {
               key: "paymentStatus",
-              label: "All payments",
+              label: t('allPayments'),
               value: query.paymentStatus,
               options: paymentOptions,
               onChange: (value) =>
@@ -98,6 +107,7 @@ export function BeneficiariesTable() {
                 })),
             },
           ]}
+          hasActiveFilters={hasActiveFilters}
           onResetFilters={() =>
             setQuery((prev) => ({
               ...prev,
@@ -116,6 +126,7 @@ export function BeneficiariesTable() {
             pageIndex: query.pageIndex,
             pageSize: query.pageSize,
           }}
+          total={data?.total ?? 0}
           pageCount={data?.totalPages ?? 1}
           onPaginationChange={(updaterOrValue) => {
             setQuery((prev) => {

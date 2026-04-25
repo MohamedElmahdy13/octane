@@ -1,23 +1,35 @@
-"use client"
+'use client'
 
 import { useEffect, useMemo, useState } from "react"
+
+import { useDebouncedValue } from '@/hooks/useDebouncedValue'
+import {
+  COMPANY_OPTIONS,
+  COVERAGE_OPTIONS,
+  NATIONALITY_OPTIONS,
+  PAYMENT_OPTIONS,
+  PER_PAGE,
+  PLAN_OPTIONS,
+} from '@/helpers/constants'
+
 import type {
   BeneficiariesQueryState,
   PaginatedBeneficiariesResponse,
-} from "../types/beneficiary.types"
-import { useDebouncedValue } from "@/hooks/useDebouncedValue"
+} from '../types/beneficiary.types'
+import { fetchBeneficiaries } from '../services/beneficiaries-client.service'
+import { buildBeneficiariesParams, paramsBuilder } from "../lib/build-beneficiaries-params"
 
 const initialState: BeneficiariesQueryState = {
   pageIndex: 0,
-  pageSize: 10,
-  search: "",
-  plan: "",
-  coverageStatus: "",
-  paymentStatus: "",
-  company: "",
-  nationality: "",
-  sortBy: "",
-  sortOrder: "desc",
+  pageSize: PER_PAGE,
+  search: '',
+  plan: '',
+  coverageStatus: '',
+  paymentStatus: '',
+  company: '',
+  nationality: '',
+  sortBy: '',
+  sortOrder: 'desc',
 }
 
 export function useBeneficiariesTable() {
@@ -28,68 +40,33 @@ export function useBeneficiariesTable() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [retryKey, setRetryKey] = useState(0)
-
+  const params = useMemo(
+    () => paramsBuilder(query, debouncedSearch),
+    [query, debouncedSearch]
+  )
   useEffect(() => {
-    if (query.search !== debouncedSearch) {
-      return
-    }
+    if (query.search !== debouncedSearch) return
 
     const controller = new AbortController()
 
     async function loadBeneficiaries() {
       try {
-        setError(null)
         setLoading(true)
+        setError(null)
 
-        const params = new URLSearchParams({
-          page: String(query.pageIndex + 1),
-          pageSize: String(query.pageSize),
-          search: debouncedSearch,
-        })
 
-        if (query.plan) params.set("plan", query.plan)
-        if (query.coverageStatus)
-          params.set("coverageStatus", query.coverageStatus)
-        if (query.paymentStatus)
-          params.set("paymentStatus", query.paymentStatus)
-        if (query.company) params.set("company", query.company)
-        if (query.nationality) params.set("nationality", query.nationality)
-
-        if (query.sortBy) {
-          params.set("sortBy", query.sortBy)
-          params.set("sortOrder", query.sortOrder)
-        }
-
-        const response = await fetch(
-          `/api/beneficiaries?${params.toString()}`,
-          {
-            signal: controller.signal,
-          }
-        )
-
-        if (!response.ok) {
-          const errorResult = await response.json().catch(() => null)
-
-          throw new Error(
-            errorResult?.message ??
-              "Failed to load beneficiaries. Please try again."
-          )
-        }
-
-        const result: PaginatedBeneficiariesResponse = await response.json()
+        const result = await fetchBeneficiaries(params, controller.signal)
 
         if (!controller.signal.aborted) {
           setData(result)
         }
       } catch (error) {
-        if (controller.signal.aborted) {
-          return
-        }
+        if (controller.signal.aborted) return
 
         setError(
           error instanceof Error
             ? error.message
-            : "Something went wrong. Please try again."
+            : 'Something went wrong. Please try again.'
         )
       } finally {
         if (!controller.signal.aborted) {
@@ -98,41 +75,10 @@ export function useBeneficiariesTable() {
       }
     }
 
-    loadBeneficiaries()
+     loadBeneficiaries()
 
     return () => controller.abort()
-  }, [
-    query.pageIndex,
-    query.pageSize,
-    query.search,
-    query.plan,
-    query.coverageStatus,
-    query.paymentStatus,
-    query.company,
-    query.nationality,
-    query.sortBy,
-    query.sortOrder,
-    debouncedSearch,
-    retryKey,
-  ])
-
-  const planOptions = useMemo(() => ["Silver", "Gold", "Platinum"], [])
-  const coverageOptions = useMemo(() => ["Active", "Suspended", "Expired"], [])
-  const paymentOptions = useMemo(() => ["Paid", "Pending", "Overdue"], [])
-  const nationalityOptions = useMemo(
-    () => ["Egyptian", "Syrian", "Lebanese", "Saudi"],
-    []
-  )
-  const companyOptions = useMemo(
-    () => [
-      "FinServe Egypt",
-      "Nile Tech",
-      "AXA Group",
-      "MedCare Solutions",
-      "Delta Finance",
-    ],
-    []
-  )
+  }, [query, debouncedSearch, retryKey])
 
   return {
     query,
@@ -141,10 +87,11 @@ export function useBeneficiariesTable() {
     loading,
     error,
     retry: () => setRetryKey((prev) => prev + 1),
-    planOptions,
-    coverageOptions,
-    nationalityOptions,
-    paymentOptions,
-    companyOptions,
+
+    planOptions: PLAN_OPTIONS,
+    coverageOptions: COVERAGE_OPTIONS,
+    nationalityOptions: NATIONALITY_OPTIONS,
+    paymentOptions: PAYMENT_OPTIONS,
+    companyOptions: COMPANY_OPTIONS,
   }
 }

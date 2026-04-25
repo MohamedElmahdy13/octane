@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { getBeneficiaries } from '@/features/beneficiaries/services/beneficiaries.service'
+import { getBeneficiaries } from '@/features/beneficiaries/services/beneficiaries-server.service'
 
 export async function GET(request: NextRequest) {
   try {

@@ -26,8 +26,18 @@
     "title": "جدول المستفيدين",
     "description": "اختر المستفيدين باستخدام مكون الجدول العام القابل لإعادة الاستخدام."
   },
+  "summary": {
+    "summaryTotalBeneficiaries": "إجمالي المستفيدين",
+    "summaryTotalBeneficiariesDescription": "حاملو وثائق مسجلون",
+    "summaryActiveCoverage": "التغطية النشطة",
+    "summaryActiveCoverageDescription": "وثائق نشطة حاليًا",
+    "summaryOverduePayments": "مدفوعات متأخرة",
+    "summaryOverduePaymentsDescription": "تحتاج إلى متابعة الدفع",
+    "summaryMonthlyPremium": "القسط الشهري",
+    "summaryMonthlyPremiumDescription": "الإيراد الشهري المتوقع"
+  },
   "table": {
-    "searchPlaceholder": "ابحث بالاسم أو البريد الإلكتروني...",
+    "searchPlaceholder": "ابحث بالاسم أو البريد الإلكتروني او البوليصة ...",
     "allRoles": "كل الأدوار",
     "allStatuses": "كل الحالات",
     "previous": "السابق",
@@ -49,6 +59,13 @@
     "expandableEnabled": "تم تفعيل التوسيع",
     "view": "عرض",
     "edit": "تعديل",
-    "suspend": "إيقاف"
+    "suspend": "إيقاف",
+    "showing": "عرض <span>{start}</span>-<span>{end}</span> من <span>{total}</span> مستخدم",
+    "allNationalities": "كل الجنسيات",
+    "allPlans": "كل الخطط",
+    "allCoverage": "كل حالات التغطية",
+    "allPayments": "كل حالات الدفع",
+    "reset": "إعادة ضبط",
+    "rows": "عدد الصفوف"
   }
 }

@@ -8,7 +8,7 @@ import { getBeneficiaryColumns } from "../../lib/get-beneficiary-columns";
 import { BeneficiaryFamilyRow } from "./beneficiary-family-row";
 import { useBeneficiariesTable } from "../../hooks/use-beneficiaries-table";
 import { BeneficiariesSummaryCards } from "@/features/beneficiaries/components/beneficiaries-summary-cards"
-import { DataTableError } from "@/components/data-table/data-table-error"
+import { DataTableError } from "@/components/data-table/tests/data-table-error"
 
 export function BeneficiariesFamilyTable() {
   const t = useTranslations("table");
@@ -27,6 +27,15 @@ export function BeneficiariesFamilyTable() {
   const columns = useMemo(
     () => getBeneficiaryColumns(query, setQuery),
     [query.sortBy, query.sortOrder, setQuery]
+  )
+  const hasActiveFilters = Boolean(
+    query.search ||
+    query.nationality ||
+    query.plan ||
+    query.coverageStatus ||
+    query.paymentStatus ||
+    query.company ||
+    query.sortBy
   )
 
   return (
@@ -47,7 +56,7 @@ export function BeneficiariesFamilyTable() {
         filters={[
           {
             key: 'nationality',
-            label: 'All nationalities',
+            label: t('allNationalities'),
             value: query.nationality,
             options: nationalityOptions,
             onChange: (value) =>
@@ -55,7 +64,7 @@ export function BeneficiariesFamilyTable() {
           },
           {
             key: 'plan',
-            label: 'All plans',
+            label: t('allPlans'),
             value: query.plan,
             options: planOptions,
             onChange: (value) =>
@@ -63,7 +72,7 @@ export function BeneficiariesFamilyTable() {
           },
           {
             key: 'coverageStatus',
-            label: 'All coverage',
+            label: t('allCoverage'),
             value: query.coverageStatus,
             options: coverageOptions,
             onChange: (value) =>
@@ -71,13 +80,14 @@ export function BeneficiariesFamilyTable() {
           },
           {
             key: 'paymentStatus',
-            label: 'All payments',
+            label: t('allPayments'),
             value: query.paymentStatus,
             options: paymentOptions,
             onChange: (value) =>
               setQuery((prev) => ({ ...prev, pageIndex: 0, paymentStatus: value })),
           },
         ]}
+        hasActiveFilters={hasActiveFilters}
         onResetFilters={() =>
           setQuery((prev) => ({
             ...prev,
@@ -96,6 +106,7 @@ export function BeneficiariesFamilyTable() {
           pageIndex: query.pageIndex,
           pageSize: query.pageSize,
         }}
+        total={data?.total ?? 0}
         pageCount={data?.totalPages ?? 1}
         onPaginationChange={(updaterOrValue) => {
           setQuery((prev) => {
@@ -120,17 +131,17 @@ export function BeneficiariesFamilyTable() {
         )}
         actions={[
           {
-            label: t('view'),
+            label: t("view"),
             icon: Eye,
             onClick: (row) => alert(`View beneficiary ${row.fullName}`),
           },
           {
-            label: 'Edit',
+            label: t("edit"),
             icon: Edit,
             onClick: (row) => alert(`Edit beneficiary ${row.fullName}`),
           },
           {
-            label: 'Suspend',
+            label: t("suspend"),
             icon: Ban,
             onClick: (row) => alert(`Suspend beneficiary ${row.fullName}`),
           },

@@ -26,8 +26,18 @@
     "title": "Beneficiaries And Family Table",
     "description": "Insurance beneficiaries with payment status and expandable family members."
   },
+  "summary": {
+    "summaryTotalBeneficiaries": "Total Beneficiaries",
+    "summaryTotalBeneficiariesDescription": "Registered policy holders",
+    "summaryActiveCoverage": "Active Coverage",
+    "summaryActiveCoverageDescription": "Currently active policies",
+    "summaryOverduePayments": "Overdue Payments",
+    "summaryOverduePaymentsDescription": "Require payment follow-up",
+    "summaryMonthlyPremium": "Monthly Premium",
+    "summaryMonthlyPremiumDescription": "Expected monthly revenue"
+  },
   "table": {
-    "searchPlaceholder": "Search by name or email...",
+    "searchPlaceholder": "Search by name or email or policy...",
     "allRoles": "All roles",
     "allStatuses": "All statuses",
     "previous": "Previous",
@@ -49,6 +59,13 @@
     "expandableEnabled": "Expandable rows enabled",
     "view": "View",
     "edit": "Edit",
-    "suspend": "Suspend"
+    "suspend": "Suspend",
+    "showing": "Showing <span>{start}</span>-<span>{end}</span> of <span>{total}</span> users",
+    "allNationalities": "All nationalities",
+    "allPlans": "All plans",
+    "allCoverage": "All coverage",
+    "allPayments": "All payments",
+    "reset": "Reset",
+    "rows": "Rows per page"
   }
 }

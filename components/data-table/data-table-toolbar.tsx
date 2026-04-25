@@ -1,5 +1,5 @@
 import { Input } from "@/components/ui/input"
-import { Select } from "@/components/ui/select"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Button } from "@/components/ui/button"
 
 export interface DataTableFilter {
@@ -17,6 +17,7 @@ interface DataTableToolbarProps {
   selectedCount: number
   onResetFilters?: () => void
   t: (key: string) => string
+  hasActiveFilters?: boolean
 }
 
 export function DataTableToolbar({
@@ -24,6 +25,7 @@ export function DataTableToolbar({
   onSearchChange,
   filters = [],
   onResetFilters,
+  hasActiveFilters,
   t,
 }: DataTableToolbarProps) {
   return (
@@ -33,23 +35,28 @@ export function DataTableToolbar({
           value={search}
           onChange={(event) => onSearchChange(event.target.value)}
           placeholder={t("searchPlaceholder")}
-          className="h-10 min-w-[260px] flex-1"
+          className="h-10 min-w-65 flex-1"
         />
 
         {filters.map((filter) => (
           <Select
             key={filter.key}
-            value={filter.value}
-            onChange={(event) => filter.onChange(event.target.value)}
-            className="h-10 min-w-[150px] flex-1 xl:flex-none"
+            value={filter.value || "all"}
+            onValueChange={(value) =>
+              filter.onChange(value === "all" ? "" : value)
+            }
           >
-            <option value="">{filter.label}</option>
-
-            {filter.options.map((option) => (
-              <option key={option} value={option}>
-                {option}
-              </option>
-            ))}
+            <SelectTrigger className="h-10 min-w-37.5 flex-1 xl:flex-none px-3">
+              <SelectValue placeholder={filter.label} />
+            </SelectTrigger>
+            <SelectContent className="p-1.5">
+              <SelectItem value="all">{filter.label}</SelectItem>
+              {filter.options.map((option) => (
+                <SelectItem key={option} value={option}>
+                  {option}
+                </SelectItem>
+              ))}
+            </SelectContent>
           </Select>
         ))}
 
@@ -58,9 +65,10 @@ export function DataTableToolbar({
             type="button"
             variant="outline"
             onClick={onResetFilters}
-            className="h-10 min-w-[100px]"
+            disabled={!hasActiveFilters}
+            className="h-10 min-w-25"
           >
-            Reset
+            {t('reset')}
           </Button>
         ) : null}
       </div>
