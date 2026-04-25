@@ -8,7 +8,7 @@ import { getBeneficiaryColumns } from "@/features/beneficiaries/lib/get-benefici
 // import { useBeneficiariesTable } from "@/features/beneficiaries/hooks/use-beneficiaries-table"
 import { useBeneficiariesQueryTable as useBeneficiariesTable } from '@/features/beneficiaries/hooks/use-beneficiaries-query-table'
 import { BeneficiariesSummaryCards } from "@/features/beneficiaries/components/beneficiaries-summary-cards"
-import { DataTableError } from "@/components/data-table/data-table-error"
+import { DataTableError } from "@/components/data-table/tests/data-table-error"
 
 export function BeneficiariesTable() {
   const t = useTranslations("table")

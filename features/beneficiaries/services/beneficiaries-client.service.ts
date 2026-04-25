@@ -1,9 +1,12 @@
 import type { PaginatedBeneficiariesResponse } from '../types/beneficiary.types'
 
 export async function fetchBeneficiaries(
-  params: URLSearchParams
+  params: URLSearchParams,
+  signal?: AbortSignal
 ): Promise<PaginatedBeneficiariesResponse> {
-  const response = await fetch(`/api/beneficiaries?${params.toString()}`)
+  const response = await fetch(`/api/beneficiaries?${params.toString()}`, {
+    signal,
+  })
 
   if (!response.ok) {
     const errorResult = await response.json().catch(() => null)
@@ -15,3 +18,4 @@ export async function fetchBeneficiaries(
 
   return response.json()
 }
+

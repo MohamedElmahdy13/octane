@@ -6,6 +6,7 @@ import { useQuery } from '@tanstack/react-query'
 import { useDebouncedValue } from '@/hooks/useDebouncedValue'
 import { fetchBeneficiaries } from '../services/beneficiaries-client.service'
 import type { BeneficiariesQueryState } from '../types/beneficiary.types'
+import { paramsBuilder } from "@/features/beneficiaries/lib/build-beneficiaries-params"
 
 const initialState: BeneficiariesQueryState = {
   pageIndex: 0,
@@ -20,36 +21,14 @@ const initialState: BeneficiariesQueryState = {
   sortOrder: 'desc',
 }
 
-function buildBeneficiariesParams(
-  query: BeneficiariesQueryState,
-  debouncedSearch: string
-) {
-  const params = new URLSearchParams({
-    page: String(query.pageIndex + 1),
-    pageSize: String(query.pageSize),
-    search: debouncedSearch,
-  })
 
-  if (query.plan) params.set('plan', query.plan)
-  if (query.coverageStatus) params.set('coverageStatus', query.coverageStatus)
-  if (query.paymentStatus) params.set('paymentStatus', query.paymentStatus)
-  if (query.company) params.set('company', query.company)
-  if (query.nationality) params.set('nationality', query.nationality)
-
-  if (query.sortBy) {
-    params.set('sortBy', query.sortBy)
-    params.set('sortOrder', query.sortOrder)
-  }
-
-  return params
-}
 
 export function useBeneficiariesQueryTable() {
   const [query, setQuery] = useState<BeneficiariesQueryState>(initialState)
   const debouncedSearch = useDebouncedValue(query.search)
 
   const params = useMemo(
-    () => buildBeneficiariesParams(query, debouncedSearch),
+    () => paramsBuilder(query, debouncedSearch),
     [query, debouncedSearch]
   )
   const beneficiariesQuery = useQuery({

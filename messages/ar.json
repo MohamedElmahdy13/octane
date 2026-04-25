@@ -37,7 +37,7 @@
     "summaryMonthlyPremiumDescription": "الإيراد الشهري المتوقع"
   },
   "table": {
-    "searchPlaceholder": "ابحث بالاسم أو البريد الإلكتروني...",
+    "searchPlaceholder": "ابحث بالاسم أو البريد الإلكتروني او البوليصة ...",
     "allRoles": "كل الأدوار",
     "allStatuses": "كل الحالات",
     "previous": "السابق",
