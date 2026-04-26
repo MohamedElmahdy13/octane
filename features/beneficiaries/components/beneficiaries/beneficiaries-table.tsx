@@ -8,7 +8,7 @@ import { DataTable } from '@/components/data-table/data-table'
 import { DataTableError } from '@/components/data-table/data-table-error'
 
 import { getBeneficiaryColumns } from '@/features/beneficiaries/lib/get-beneficiary-columns'
-import { useBeneficiariesQueryTable as useBeneficiariesTable } from '@/features/beneficiaries/hooks/use-beneficiaries-query-table'
+import { useBeneficiariesWithFallback as useBeneficiariesTable } from '@/features/beneficiaries/hooks/use-beneficiaries-with-fallback'
 import { BeneficiariesSummaryCards } from '@/features/beneficiaries/components/beneficiaries-summary-cards'
 import type { DataTableFilter, FiltersDraft } from "@/components/data-table/data-table-toolbar/table.types"
 
