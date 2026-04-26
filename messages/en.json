@@ -66,6 +66,7 @@
     "allCoverage": "All coverage",
     "allPayments": "All payments",
     "reset": "Reset",
-    "rows": "Rows per page"
+    "rows": "Rows per page",
+    "apply": "Apply"
   }
 }
