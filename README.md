@@ -20,6 +20,7 @@ Built with a strong focus on performance, usability, and maintainable architectu
 - Friendly empty states
 - Error handling with retry support
 - Full i18n support (English / Arabic + RTL/LTR)
+- Dark / night mode 
 
 ---
 
@@ -84,7 +85,7 @@ This demonstrates both advanced and simple data-fetching approaches in the same 
 ## Fallback Data Strategy
 
 The app supports a fallback mechanism in case Supabase is unavailable.
-
+incase supabase is down just switch on switch-mockup branch this branch is using mockup instead of supabase 
 Flow:
 Beneficiaries Table
 → Supabase API
