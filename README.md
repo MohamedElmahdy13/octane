@@ -23,7 +23,7 @@ Built with a strong focus on performance, usability, and maintainable architectu
 - Dark / night mode 
 
 ---
-
+> The project follows a feature-based architecture to improve scalability and maintainability.
 ## Architecture Highlights
 
 - Separation between:
@@ -48,6 +48,17 @@ Built with a strong focus on performance, usability, and maintainable architectu
 
 ---
 
+## Why This Architecture?
+The project is designed to balance simplicity and scalability:
+- TanStack Query is used for complex data flows (caching, deduplication)
+- Manual fetch is kept as TanStack not mentioned 
+- A mapper layer isolates backend data from UI
+- DataTable is fully reusable and decoupled from business logic
+- Toolbar manages its own state to prevent unnecessary re-renders
+
+This approach ensures performance, maintainability, and flexibility.
+
+
 ## Tech Stack
 
 - Next.js (App Router)
@@ -57,6 +68,7 @@ Built with a strong focus on performance, usability, and maintainable architectu
 - TanStack Query
 - Supabase
 - next-intl (i18n)
+- Ui Shadcn
 
 ---
 
@@ -112,30 +124,7 @@ Notes:
   - i18n/
   - messages/
 
----
 
-## Project Structure
-features/
-beneficiaries/
-components/
-hooks/
-services/
-beneficiaries.service.ts
-beneficiaries-client.service.ts
-mappers/
-lib/
-components/
-data-table/
-data-table.tsx
-data-table-toolbar/
-data-table-pagination/
-data-table-body/
-app/
-[locale]/
-api/
-beneficiaries/
-
----
 
 ## Getting Started
 
