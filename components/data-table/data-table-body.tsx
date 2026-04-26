@@ -18,6 +18,7 @@ interface DataTableBodyProps<TData extends { id: number | string }> {
   renderExpandedRow?: (row: TData) => React.ReactNode
   enableExpandable: boolean
   t: (key: string) => string
+
 }
 
 export function DataTableBody<TData extends { id: number | string }>({

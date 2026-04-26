@@ -1,17 +1,22 @@
-"use client"
+'use client'
 
-import { useMemo } from "react"
-import { Ban, Edit, Eye } from "lucide-react"
-import { useTranslations } from "next-intl"
-import { DataTable } from "@/components/data-table/data-table"
-import { getBeneficiaryColumns } from "@/features/beneficiaries/lib/get-beneficiary-columns"
-// import { useBeneficiariesTable } from "@/features/beneficiaries/hooks/use-beneficiaries-table"
+import { useMemo } from 'react'
+import { Ban, Edit, Eye } from 'lucide-react'
+import { useTranslations } from 'next-intl'
+
+import { DataTable } from '@/components/data-table/data-table'
+import type {
+  DataTableFilter,
+  FiltersDraft,
+} from '@/components/data-table/data-table-toolbar'
+import { DataTableError } from '@/components/data-table/data-table-error'
+
+import { getBeneficiaryColumns } from '@/features/beneficiaries/lib/get-beneficiary-columns'
 import { useBeneficiariesQueryTable as useBeneficiariesTable } from '@/features/beneficiaries/hooks/use-beneficiaries-query-table'
-import { BeneficiariesSummaryCards } from "@/features/beneficiaries/components/beneficiaries-summary-cards"
-import { DataTableError } from "@/components/data-table/tests/data-table-error"
+import { BeneficiariesSummaryCards } from '@/features/beneficiaries/components/beneficiaries-summary-cards'
 
 export function BeneficiariesTable() {
-  const t = useTranslations("table")
+  const t = useTranslations('table')
 
   const {
     query,
@@ -25,6 +30,52 @@ export function BeneficiariesTable() {
     coverageOptions,
     paymentOptions,
   } = useBeneficiariesTable()
+
+  const columns = useMemo(
+    () => getBeneficiaryColumns(query, setQuery),
+    [query.sortBy, query.sortOrder, setQuery]
+  )
+
+  const filters: DataTableFilter[] = useMemo(
+    () => [
+      {
+        key: 'nationality',
+        label: t('allNationalities'),
+        value: query.nationality,
+        options: nationalityOptions,
+      },
+      {
+        key: 'plan',
+        label: t('allPlans'),
+        value: query.plan,
+        options: planOptions,
+      },
+      {
+        key: 'coverageStatus',
+        label: t('allCoverage'),
+        value: query.coverageStatus,
+        options: coverageOptions,
+      },
+      {
+        key: 'paymentStatus',
+        label: t('allPayments'),
+        value: query.paymentStatus,
+        options: paymentOptions,
+      },
+    ],
+    [
+      t,
+      query.nationality,
+      query.plan,
+      query.coverageStatus,
+      query.paymentStatus,
+      nationalityOptions,
+      planOptions,
+      coverageOptions,
+      paymentOptions,
+    ]
+  )
+
   const hasActiveFilters = Boolean(
     query.search ||
     query.nationality ||
@@ -35,13 +86,38 @@ export function BeneficiariesTable() {
     query.sortBy
   )
 
-  const columns = useMemo(
-    () => getBeneficiaryColumns(query, setQuery),
-    [query.sortBy, query.sortOrder, setQuery]
-  )
+  const applyFilters = (draft: FiltersDraft) => {
+    setQuery((prev) => ({
+      ...prev,
+      pageIndex: 0,
+      search: draft.search,
+      nationality: draft.nationality ?? '',
+      plan: draft.plan ?? '',
+      coverageStatus: draft.coverageStatus ?? '',
+      paymentStatus: draft.paymentStatus ?? '',
+      company: draft.company ?? '',
+    }))
+  }
+
+  const resetFilters = () => {
+    setQuery((prev) => ({
+      ...prev,
+      pageIndex: 0,
+      search: '',
+      nationality: '',
+      plan: '',
+      coverageStatus: '',
+      paymentStatus: '',
+      company: '',
+      sortBy: '',
+      sortOrder: 'desc',
+    }))
+  }
+
   return (
     <>
       <BeneficiariesSummaryCards beneficiaries={data?.data ?? []} />
+
       {error ? (
         <DataTableError onRetry={retry} isRetrying={loading} message={error} />
       ) : (
@@ -50,78 +126,10 @@ export function BeneficiariesTable() {
           columns={columns}
           loading={loading}
           search={query.search}
-          onSearchChange={(value) =>
-            setQuery((prev) => ({
-              ...prev,
-              pageIndex: 0,
-              search: value,
-            }))
-          }
-          filters={[
-            {
-              key: "nationality",
-              label: t('allNationalities'),
-              value: query.nationality,
-              options: nationalityOptions,
-              onChange: (value) =>
-                setQuery((prev) => ({
-                  ...prev,
-                  pageIndex: 0,
-                  nationality: value,
-                })),
-            },
-            {
-              key: "plan",
-              label: t('allPlans'),
-              value: query.plan,
-              options: planOptions,
-              onChange: (value) =>
-                setQuery((prev) => ({
-                  ...prev,
-                  pageIndex: 0,
-                  plan: value,
-                })),
-            },
-            {
-              key: "coverageStatus",
-              label: t('allCoverage'),
-              value: query.coverageStatus,
-              options: coverageOptions,
-              onChange: (value) =>
-                setQuery((prev) => ({
-                  ...prev,
-                  pageIndex: 0,
-                  coverageStatus: value,
-                })),
-            },
-            {
-              key: "paymentStatus",
-              label: t('allPayments'),
-              value: query.paymentStatus,
-              options: paymentOptions,
-              onChange: (value) =>
-                setQuery((prev) => ({
-                  ...prev,
-                  pageIndex: 0,
-                  paymentStatus: value,
-                })),
-            },
-          ]}
+          filters={filters}
           hasActiveFilters={hasActiveFilters}
-          onResetFilters={() =>
-            setQuery((prev) => ({
-              ...prev,
-              pageIndex: 0,
-              search: "",
-              nationality: "",
-              plan: "",
-              coverageStatus: "",
-              paymentStatus: "",
-              company: "",
-              sortBy: "",
-              sortOrder: "desc",
-            }))
-          }
+          onApplyFilters={applyFilters}
+          onResetFilters={resetFilters}
           pagination={{
             pageIndex: query.pageIndex,
             pageSize: query.pageSize,
@@ -131,11 +139,11 @@ export function BeneficiariesTable() {
           onPaginationChange={(updaterOrValue) => {
             setQuery((prev) => {
               const nextPagination =
-                typeof updaterOrValue === "function"
+                typeof updaterOrValue === 'function'
                   ? updaterOrValue({
-                      pageIndex: prev.pageIndex,
-                      pageSize: prev.pageSize,
-                    })
+                    pageIndex: prev.pageIndex,
+                    pageSize: prev.pageSize,
+                  })
                   : updaterOrValue
 
               return {
@@ -148,17 +156,17 @@ export function BeneficiariesTable() {
           enableSelection
           actions={[
             {
-              label: t("view"),
+              label: t('view'),
               icon: Eye,
               onClick: (row) => alert(`View beneficiary ${row.fullName}`),
             },
             {
-              label: t("edit"),
+              label: t('edit'),
               icon: Edit,
               onClick: (row) => alert(`Edit beneficiary ${row.fullName}`),
             },
             {
-              label: t("suspend"),
+              label: t('suspend'),
               icon: Ban,
               onClick: (row) => alert(`Suspend beneficiary ${row.fullName}`),
             },

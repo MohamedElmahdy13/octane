@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/incompatible-library */
-"use client"
+'use client'
 
-import * as React from "react"
+import * as React from 'react'
 import {
   getCoreRowModel,
   useReactTable,
@@ -10,55 +10,64 @@ import {
   type OnChangeFn,
   type PaginationState,
   type RowSelectionState,
-} from "@tanstack/react-table"
-import { useTranslations } from "next-intl"
-import { Card, CardContent } from "@/components/ui/card"
+} from '@tanstack/react-table'
+import { useTranslations } from 'next-intl'
+
+import { Card, CardContent } from '@/components/ui/card'
 import {
   buildInternalColumns,
   type DataTableAction,
-} from "./build-internal-columns"
-import { DataTableToolbar } from "./data-table-toolbar"
-import { DataTableBody } from "./data-table-body"
-import { DataTablePagination } from "./data-table-pagination"
-import type { DataTableFilter } from "./data-table-toolbar"
+} from './build-internal-columns'
+import {
+  DataTableToolbar,
+  type DataTableFilter,
+  type FiltersDraft,
+} from './data-table-toolbar'
+import { DataTableBody } from './data-table-body'
+import { DataTablePagination } from './data-table-pagination'
+
 interface DataTableProps<TData extends { id: number | string }> {
   data: TData[]
   columns: ColumnDef<TData>[]
   loading: boolean
+
   search: string
-  onSearchChange: (value: string) => void
   filters?: DataTableFilter[]
+  onApplyFilters?: (draft: FiltersDraft) => void
   onResetFilters?: () => void
+  hasActiveFilters?: boolean
+
   pagination: PaginationState
   pageCount: number
   onPaginationChange: OnChangeFn<PaginationState>
+  total: number
+
   enableSelection?: boolean
   enableExpandable?: boolean
   renderExpandedRow?: (row: TData) => React.ReactNode
   actions?: DataTableAction<TData>[]
-  hasActiveFilters?: boolean
-  total: number
 }
 
 export function DataTable<TData extends { id: number | string }>({
-  data,
-  columns,
-  loading,
-  search,
-  onSearchChange,
-  filters,
-  onResetFilters,
-  hasActiveFilters=false,
-  pagination,
-  pageCount,
-  total ,
-  onPaginationChange,
-  enableSelection = false,
-  enableExpandable = false,
-  renderExpandedRow,
-  actions = [],
-}: DataTableProps<TData>) {
-  const t = useTranslations("table")
+                                                                   data,
+                                                                   columns,
+                                                                   loading,
+                                                                   search,
+                                                                   filters = [],
+                                                                   onApplyFilters,
+                                                                   onResetFilters,
+                                                                   hasActiveFilters = false,
+                                                                   pagination,
+                                                                   pageCount,
+                                                                   total,
+                                                                   onPaginationChange,
+                                                                   enableSelection = false,
+                                                                   enableExpandable = false,
+                                                                   renderExpandedRow,
+                                                                   actions = [],
+                                                                 }: DataTableProps<TData>) {
+  const t = useTranslations('table')
+
   const [rowSelection, setRowSelection] = React.useState<RowSelectionState>({})
   const [expanded, setExpanded] = React.useState<ExpandedState>({})
 
@@ -100,13 +109,14 @@ export function DataTable<TData extends { id: number | string }>({
       <CardContent className="space-y-6 p-6">
         <DataTableToolbar
           search={search}
-          onSearchChange={onSearchChange}
           filters={filters}
           selectedCount={selectedCount}
+          onApplyFilters={onApplyFilters}
           onResetFilters={onResetFilters}
           hasActiveFilters={hasActiveFilters}
           t={t}
         />
+
         <DataTableBody
           table={table}
           loading={loading}
