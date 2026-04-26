@@ -5,15 +5,12 @@ import { Ban, Edit, Eye } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 
 import { DataTable } from '@/components/data-table/data-table'
-import type {
-  DataTableFilter,
-  FiltersDraft,
-} from '@/components/data-table/data-table-toolbar'
 import { DataTableError } from '@/components/data-table/data-table-error'
 
 import { getBeneficiaryColumns } from '@/features/beneficiaries/lib/get-beneficiary-columns'
 import { useBeneficiariesQueryTable as useBeneficiariesTable } from '@/features/beneficiaries/hooks/use-beneficiaries-query-table'
 import { BeneficiariesSummaryCards } from '@/features/beneficiaries/components/beneficiaries-summary-cards'
+import type { DataTableFilter, FiltersDraft } from "@/components/data-table/data-table-toolbar/table.types"
 
 export function BeneficiariesTable() {
   const t = useTranslations('table')
@@ -32,10 +29,16 @@ export function BeneficiariesTable() {
   } = useBeneficiariesTable()
 
   const columns = useMemo(
-    () => getBeneficiaryColumns(query, setQuery),
+    () =>
+      getBeneficiaryColumns(
+        {
+          sortBy: query.sortBy,
+          sortOrder: query.sortOrder,
+        },
+        setQuery
+      ),
     [query.sortBy, query.sortOrder, setQuery]
   )
-
   const filters: DataTableFilter[] = useMemo(
     () => [
       {

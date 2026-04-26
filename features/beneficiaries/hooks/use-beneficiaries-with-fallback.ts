@@ -13,8 +13,9 @@ import {
   PLAN_OPTIONS,
 } from '@/helpers/constants'
 
-import { paramsBuilder } from '@/features/beneficiaries/lib/build-beneficiaries-params'
+import { paramsBuilder } from '../lib/build-beneficiaries-params'
 import { fetchBeneficiaries } from '../services/beneficiaries-client.service'
+import { fetchMockBeneficiaries } from '../services/beneficiaries-mock.service'
 import type { BeneficiariesQueryState } from '../types/beneficiary.types'
 
 const initialState: BeneficiariesQueryState = {
@@ -30,7 +31,16 @@ const initialState: BeneficiariesQueryState = {
   sortOrder: 'desc',
 }
 
-export function useBeneficiariesQueryTable() {
+async function fetchWithFallback(params: URLSearchParams, signal?: AbortSignal) {
+  try {
+    return await fetchBeneficiaries(params, signal)
+  } catch (error) {
+    console.warn('Supabase API failed. Falling back to mock data.', error)
+    return fetchMockBeneficiaries(params)
+  }
+}
+
+export function useBeneficiariesWithFallback() {
   const [query, setQuery] = useState<BeneficiariesQueryState>(initialState)
   const debouncedSearch = useDebouncedValue(query.search)
 
@@ -40,8 +50,8 @@ export function useBeneficiariesQueryTable() {
   )
 
   const beneficiariesQuery = useQuery({
-    queryKey: ['beneficiaries', params.toString()],
-    queryFn: ({ signal }) => fetchBeneficiaries(params, signal),
+    queryKey: ['beneficiaries-fallback', params.toString()],
+    queryFn: ({ signal }) => fetchWithFallback(params, signal),
     placeholderData: (previousData) => previousData,
   })
 
@@ -55,7 +65,6 @@ export function useBeneficiariesQueryTable() {
         ? beneficiariesQuery.error.message
         : null,
     retry: beneficiariesQuery.refetch,
-
     planOptions: PLAN_OPTIONS,
     coverageOptions: COVERAGE_OPTIONS,
     nationalityOptions: NATIONALITY_OPTIONS,

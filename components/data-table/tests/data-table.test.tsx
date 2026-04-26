@@ -33,7 +33,8 @@ describe('DataTable', () => {
         columns={columns}
         loading={false}
         search=""
-        onSearchChange={() => {}}
+        filters={[]}
+        onApplyFilters={() => {}}
         pagination={{ pageIndex: 0, pageSize: 10 }}
         total={1}
         pageCount={1}
