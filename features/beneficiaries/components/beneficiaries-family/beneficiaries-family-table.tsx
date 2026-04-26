@@ -6,14 +6,10 @@ import { Ban, Edit, Eye } from 'lucide-react'
 
 import { DataTable } from '@/components/data-table/data-table'
 import { DataTableError } from '@/components/data-table/data-table-error'
-import type {
-  DataTableFilter,
-  FiltersDraft,
-} from '@/components/data-table/data-table-toolbar'
-
 import { getBeneficiaryColumns } from '../../lib/get-beneficiary-columns'
 import { BeneficiaryFamilyRow } from './beneficiary-family-row'
 import { useBeneficiariesTable } from '../../hooks/use-beneficiaries-table'
+import type { DataTableFilter, FiltersDraft } from "@/components/data-table/data-table-toolbar/table.types"
 
 export function BeneficiariesFamilyTable() {
   const t = useTranslations('table')
@@ -32,7 +28,14 @@ export function BeneficiariesFamilyTable() {
   } = useBeneficiariesTable()
 
   const columns = useMemo(
-    () => getBeneficiaryColumns(query, setQuery),
+    () =>
+      getBeneficiaryColumns(
+        {
+          sortBy: query.sortBy,
+          sortOrder: query.sortOrder,
+        },
+        setQuery
+      ),
     [query.sortBy, query.sortOrder, setQuery]
   )
 

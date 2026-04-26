@@ -13,6 +13,7 @@ export function renderWithIntl(ui: React.ReactElement) {
           rows: 'Rows',
           searchPlaceholder: 'Search...',
           showing: 'Showing <span>{start}</span>-<span>{end}</span> of <span>{total}</span>',
+          apply: 'Apply',
         },
       }}
     >

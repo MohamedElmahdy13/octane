@@ -23,9 +23,9 @@ export function DataTableSkeleton({
                 {isFirstColumn || isLastColumn ? (
                   <Skeleton className="h-8 w-8 rounded-md" />
                 ) : columnIndex === 1 ? (
-                  <Skeleton className="h-4 w-full max-w-[120px]" />
+                  <Skeleton className="h-4 w-full max-w-30" />
                 ) : (
-                  <Skeleton className="h-4 w-full max-w-[90px]" />
+                  <Skeleton className="h-4 w-full max-w-22.5" />
                 )}
               </TableCell>
             )

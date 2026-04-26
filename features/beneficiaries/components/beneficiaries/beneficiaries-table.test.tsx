@@ -1,28 +1,33 @@
-import { render, screen, fireEvent } from '@testing-library/react'
-import { describe, it, expect, vi } from 'vitest'
+import { fireEvent, screen } from '@testing-library/react'
+import { describe, expect, it, vi } from 'vitest'
 
-import { DataTableToolbar } from '@/components/data-table/data-table-toolbar'
+import { DataTableToolbar } from '@/components/data-table/data-table-toolbar/data-table-toolbar'
+import { renderWithIntl } from '@/tests/test-utils'
 
 describe('DataTableToolbar', () => {
-  it('should update search input', () => {
-    const onSearchChange = vi.fn()
+  it('applies search value after clicking Apply', () => {
+    const onApplyFilters = vi.fn()
 
-    render(
+    renderWithIntl(
       <DataTableToolbar
         search=""
-        onSearchChange={onSearchChange}
         filters={[]}
         selectedCount={0}
+        onApplyFilters={onApplyFilters}
         t={(key) => key}
       />
     )
 
-    const input = screen.getByPlaceholderText(/search/i)
-
-    fireEvent.change(input, {
+    fireEvent.change(screen.getByPlaceholderText('searchPlaceholder'), {
       target: { value: 'ahmed' },
     })
 
-    expect(onSearchChange).toHaveBeenCalledWith('ahmed')
+    fireEvent.click(screen.getByRole('button', { name: /apply/i }))
+
+    expect(onApplyFilters).toHaveBeenCalledWith(
+      expect.objectContaining({
+        search: 'ahmed',
+      })
+    )
   })
 })

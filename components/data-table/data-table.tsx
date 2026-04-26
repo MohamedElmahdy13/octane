@@ -17,14 +17,11 @@ import { Card, CardContent } from '@/components/ui/card'
 import {
   buildInternalColumns,
   type DataTableAction,
-} from './build-internal-columns'
-import {
-  DataTableToolbar,
-  type DataTableFilter,
-  type FiltersDraft,
-} from './data-table-toolbar'
+} from './lib/build-internal-columns'
 import { DataTableBody } from './data-table-body'
 import { DataTablePagination } from './data-table-pagination'
+import { DataTableToolbar } from "@/components/data-table/data-table-toolbar/data-table-toolbar"
+import { DataTableFilter, FiltersDraft } from "@/components/data-table/data-table-toolbar/table.types"
 
 interface DataTableProps<TData extends { id: number | string }> {
   data: TData[]

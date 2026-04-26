@@ -12,8 +12,9 @@ import type {
   BeneficiariesQueryState,
 } from "../types/beneficiary.types"
 
+type BeneficiarySortState = Pick<BeneficiariesQueryState,'sortBy' | 'sortOrder'>
 export function getBeneficiaryColumns(
-  query: BeneficiariesQueryState,
+  query: BeneficiarySortState,
   setQuery: Dispatch<SetStateAction<BeneficiariesQueryState>>
 ): ColumnDef<Beneficiary>[] {
   const toggleSort = (sortBy: "monthlyPremium" | "lastPaymentDate") => {
