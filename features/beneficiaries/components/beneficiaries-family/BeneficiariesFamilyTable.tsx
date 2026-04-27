@@ -4,10 +4,10 @@ import { useMemo } from 'react'
 import { useTranslations } from 'next-intl'
 import { Ban, Edit, Eye } from 'lucide-react'
 
-import { DataTable } from '@/components/data-table/data-table'
-import { DataTableError } from '@/components/data-table/data-table-error'
+import { DataTable } from '@/components/data-table/DataTable'
+import { DataTableError } from '@/components/data-table/DataTableError'
 import { getBeneficiaryColumns } from '../../lib/get-beneficiary-columns'
-import { BeneficiaryFamilyRow } from './beneficiary-family-row'
+import { BeneficiaryFamilyRow } from './BeneficiaryFamilyRow'
 import { useBeneficiariesTable } from '../../hooks/use-beneficiaries-table'
 import type { DataTableFilter, FiltersDraft } from "@/components/data-table/data-table-toolbar/table.types"
 

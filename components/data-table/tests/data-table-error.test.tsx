@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import { describe, it, expect } from 'vitest'
 
-import { DataTableError } from '../data-table-error'
+import { DataTableError } from '../DataTableError'
 
 describe('DataTableError', () => {
   it('renders error message', () => {

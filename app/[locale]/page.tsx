@@ -3,8 +3,8 @@ import {Button} from '@/components/ui/button'
 import {Card, CardContent, CardDescription, CardHeader, CardTitle} from '@/components/ui/card'
 import {Link} from '@/i18n/navigation'
 import type {AppLocale} from '@/i18n/routing'
-import {PageContainer} from '@/components/layout/page-container'
-import {PageHeader} from '@/components/layout/page-header'
+import {PageContainer} from '@/components/layout/PageContainer'
+import {PageHeader} from '@/components/layout/PageHeader'
 
 export default async function HomePage({
   params,

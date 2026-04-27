@@ -18,9 +18,9 @@ import {
   buildInternalColumns,
   type DataTableAction,
 } from './lib/build-internal-columns'
-import { DataTableBody } from './data-table-body'
-import { DataTablePagination } from './data-table-pagination'
-import { DataTableToolbar } from "@/components/data-table/data-table-toolbar/data-table-toolbar"
+import { DataTableBody } from './DataTableBody'
+import { DataTablePagination } from './DataTablePagination'
+import { DataTableToolbar } from "@/components/data-table/data-table-toolbar/DataTableToolbar"
 import { DataTableFilter, FiltersDraft } from "@/components/data-table/data-table-toolbar/table.types"
 
 interface DataTableProps<TData extends { id: number | string }> {

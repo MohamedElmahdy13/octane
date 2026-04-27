@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/react'
 import { describe, it, expect } from 'vitest'
 
-import { DataTable } from '../data-table'
+import { DataTable } from '../DataTable'
 import { renderWithIntl } from '@/tests/test-utils'
 
 describe('DataTable', () => {

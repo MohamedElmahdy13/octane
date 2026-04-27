@@ -1,7 +1,7 @@
 import { screen, fireEvent } from '@testing-library/react'
 import { describe, it, expect, vi } from 'vitest'
 
-import { DataTablePagination } from '../data-table-pagination'
+import { DataTablePagination } from '../DataTablePagination'
 import { renderWithIntl } from '@/tests/test-utils'
 
 describe('DataTablePagination', () => {

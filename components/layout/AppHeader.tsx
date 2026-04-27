@@ -8,9 +8,9 @@ import { usePathname } from "next/navigation"
 import { Link } from "@/i18n/navigation"
 import type { AppLocale } from "@/i18n/routing"
 import { Button } from "@/components/ui/button"
-import { LanguageSwitcher } from "./language-switcher"
+import { LanguageSwitcher } from "./LanguageSwitcher"
 import { AnimatedLink } from "@/components/ui/animated-link"
-import { ThemeToggle } from "@/components/layout/theme-toggle"
+import { ThemeToggle } from "@/components/layout/ThemeToggle"
 
 interface AppHeaderProps {
   locale: AppLocale

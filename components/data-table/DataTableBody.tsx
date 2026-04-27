@@ -10,7 +10,7 @@ import {
   TableRow,
 } from "@/components/ui/table"
 
-import { DataTableSkeleton } from "./data-table-skeleton"
+import { DataTableSkeleton } from "./DataTableSkeleton"
 
 interface DataTableBodyProps<TData extends { id: number | string }> {
   table: TanstackTable<TData>

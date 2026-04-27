@@ -1,7 +1,7 @@
 import { fireEvent, screen } from '@testing-library/react'
 import { describe, expect, it, vi } from 'vitest'
 
-import { DataTableToolbar } from '@/components/data-table/data-table-toolbar/data-table-toolbar'
+import { DataTableToolbar } from '@/components/data-table/data-table-toolbar/DataTableToolbar'
 import { renderWithIntl } from '@/tests/test-utils'
 
 describe('DataTableToolbar', () => {

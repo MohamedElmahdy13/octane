@@ -2,7 +2,7 @@ import {NextIntlClientProvider, hasLocale} from 'next-intl'
 import {getMessages, setRequestLocale} from 'next-intl/server'
 import {notFound} from 'next/navigation'
 import {routing} from '@/i18n/routing'
-import {AppHeader} from '@/components/layout/app-header'
+import {AppHeader} from '@/components/layout/AppHeader'
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({locale}))

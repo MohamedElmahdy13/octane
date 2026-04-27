@@ -1,11 +1,11 @@
 import { getTranslations, setRequestLocale } from "next-intl/server"
 import type { AppLocale } from "@/i18n/routing"
 
-import { PageContainer } from "@/components/layout/page-container"
-import { PageHeader } from "@/components/layout/page-header"
+import { PageContainer } from "@/components/layout/PageContainer"
+import { PageHeader } from "@/components/layout/PageHeader"
 import {
   BeneficiariesFamilyTable,
-} from "@/features/beneficiaries/components/beneficiaries-family/beneficiaries-family-table"
+} from "@/features/beneficiaries/components/beneficiaries-family/BeneficiariesFamilyTable"
 
 export default async function BeneficiariesPage({
                                                   params,

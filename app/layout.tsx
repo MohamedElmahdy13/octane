@@ -1,9 +1,9 @@
 import {Geist, Geist_Mono} from 'next/font/google'
 
 import './globals.css'
-import {ThemeProvider} from '@/components/providers/theme-provider'
+import {ThemeProvider} from '@/components/providers/ThemeProvider'
 import {cn} from '@/lib/utils'
-import { QueryProvider } from "@/components/providers/query-provider"
+import { QueryProvider } from "@/components/providers/QueryProvider"
 
 const geist = Geist({subsets: ['latin'], variable: '--font-sans'})
 const fontMono = Geist_Mono({subsets: ['latin'], variable: '--font-mono'})

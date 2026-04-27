@@ -1,9 +1,9 @@
 import { getTranslations, setRequestLocale } from "next-intl/server"
 import type { AppLocale } from "@/i18n/routing"
 
-import { PageContainer } from "@/components/layout/page-container"
-import { PageHeader } from "@/components/layout/page-header"
-import { BeneficiariesTable } from "@/features/beneficiaries/components/beneficiaries/beneficiaries-table"
+import { PageContainer } from "@/components/layout/PageContainer"
+import { PageHeader } from "@/components/layout/PageHeader"
+import { BeneficiariesTable } from "@/features/beneficiaries/components/beneficiaries/BeneficiariesTable"
 
 export default async function BeneficiariesPage({
                                                   params,

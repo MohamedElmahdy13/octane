@@ -4,12 +4,12 @@ import { useMemo } from 'react'
 import { Ban, Edit, Eye } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 
-import { DataTable } from '@/components/data-table/data-table'
-import { DataTableError } from '@/components/data-table/data-table-error'
+import { DataTable } from '@/components/data-table/DataTable'
+import { DataTableError } from '@/components/data-table/DataTableError'
 
 import { getBeneficiaryColumns } from '@/features/beneficiaries/lib/get-beneficiary-columns'
 import { useBeneficiariesQueryTable as useBeneficiariesTable } from '@/features/beneficiaries/hooks/use-beneficiaries-query-table'
-import { BeneficiariesSummaryCards } from '@/features/beneficiaries/components/beneficiaries-summary-cards'
+import { BeneficiariesSummaryCards } from '@/features/beneficiaries/components/BeneficiariesSummaryCards'
 import type { DataTableFilter, FiltersDraft } from "@/components/data-table/data-table-toolbar/table.types"
 
 export function BeneficiariesTable() {

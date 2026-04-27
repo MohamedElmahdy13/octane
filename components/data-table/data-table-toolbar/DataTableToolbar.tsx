@@ -2,8 +2,8 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 
 import { Button } from '@/components/ui/button'
 
-import { DataTableToolbarSearch } from './data-table-toolbar-search'
-import { DataTableToolbarSelect } from './data-table-toolbar-select'
+import { DataTableToolbarSearch } from './DataTableToolbarSearch'
+import { DataTableToolbarSelect } from './DataTableToolbarSelect'
 import type {
   DataTableFilter,
   FiltersDraft,
